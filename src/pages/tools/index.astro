@@ -3,6 +3,91 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import ToolSection from '@/components/ToolSection.astro'
 import Button from '@/components/Button.astro'
 
+const PROGRAMMING_LANGUAGE = [
+	{
+		name: 'Typescript',
+		description: 'Type-safe JavaScript',
+		href: 'https://www.typescriptlang.org/',
+		iconPath: 'typescript',
+		iconBgColour: '#007ACC'
+	},
+	{
+		name: 'Python',
+		description: 'Data Science',
+		href: 'https://www.python.org/',
+		iconPath: 'python',
+		iconBgColour: '#FFD344'
+	},
+	{
+		name: 'Java',
+		description: 'Object-oriented programming',
+		href: 'https://www.java.com/',
+		iconPath: 'java',
+		iconBgColour: '#E76F00'
+	}
+]
+
+const MACHINE_LEARNING = [
+	{
+		name: 'PyTorch',
+		description: 'Deep Learning',
+		href: 'https://pytorch.org/',
+		iconPath: 'pytorch',
+		iconBgColour: '#EE4C2C'
+	}
+]
+
+const DATABASE = [
+	{
+		name: 'MongoDB',
+		description: 'NoSQL Database',
+		href: 'https://www.mongodb.com/',
+		iconPath: 'mongodb',
+		iconBgColour: '#13AA52'
+	},
+	{
+		name: 'PostgreSQL',
+		description: 'Relational Database',
+		href: 'https://www.postgresql.org/',
+		iconPath: 'postgresql',
+		iconBgColour: '#336791'
+	},
+	{
+		name: 'Firebase',
+		description: 'Realtime Database',
+		href: 'https://firebase.google.com/',
+		iconPath: 'firebase',
+		iconBgColour: '#FFCA28'
+	}
+]
+
+const CLOUD_COMPUTING = [
+	{
+		name: 'AWS',
+		description: 'Cloud Computing',
+		href: 'https://aws.amazon.com/',
+		iconPath: 'aws',
+		iconBgColour: '#FF9900'
+	}
+]
+
+const DEVOPS = [
+	{
+		name: 'Docker',
+		description: 'Containerization',
+		href: 'https://www.docker.com/',
+		iconPath: 'docker',
+		iconBgColour: '#2496ED'
+	},
+	{
+		name: 'Jenkins',
+		description: 'CI/CD',
+		href: 'https://www.jenkins.io/',
+		iconPath: 'jenkins',
+		iconBgColour: '#D24939'
+	}
+]
+
 const EDITING = [
 	{
 		name: 'Premiere Pro',
@@ -20,6 +105,13 @@ const DESIGN = [
 		href: 'https://www.figma.com/',
 		iconPath: 'figma',
 		iconBgColour: '#FF6C37'
+	},
+	{
+		name: 'Eraser',
+		description: 'Architecture Design',
+		href: 'https://www.eraser.io/',
+		iconPath: 'eraser',
+		iconBgColour: '#2C2C32'
 	}
 ]
 
@@ -37,13 +129,6 @@ const PRODUCTIVITY = [
 		href: 'https://www.notion.so/product',
 		iconPath: 'notion',
 		iconBgColour: '#EFEFEE'
-	},
-	{
-		name: 'Obsidian',
-		description: 'Long-form Writing',
-		href: 'https://obsidian.md/',
-		iconPath: 'obsidian',
-		iconBgColour: '#7A3EE8'
 	}
 ]
 
@@ -59,11 +144,11 @@ const TESTING = [
 
 const DEVELOPMENT = [
 	{
-		name: 'WebStorm',
-		description: 'Web Development',
-		href: 'https://www.jetbrains.com/webstorm/',
-		iconPath: 'webstorm',
-		iconBgColour: '#00CDD7'
+		name: 'Git',
+		description: 'Version Control',
+		href: 'https://git-scm.com/',
+		iconPath: 'git',
+		iconBgColour: '#F05032'
 	},
 	{
 		name: 'VS Code',
@@ -82,7 +167,7 @@ const DEVELOPMENT = [
 ]
 ---
 
-<PageLayout meta={{ title: 'Home' }}>
+<PageLayout meta={{ title: 'Tools' }}>
 	<div class='w-full'>
 		<Button title='Back' href='/' style='button'>
 			<svg
@@ -101,6 +186,17 @@ const DEVELOPMENT = [
 		</Button>
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Skills</h1>
+				<p>Skills that I had</p>
+			</div>
+
+			<ToolSection title='Programming Language' tools={PROGRAMMING_LANGUAGE} />
+			<ToolSection title='Database' tools={DATABASE} />
+			<ToolSection title='DevOps' tools={DEVOPS} />
+			<ToolSection title='Cloud Computing' tools={CLOUD_COMPUTING} />
+			<ToolSection title='Machine Learning' tools={MACHINE_LEARNING} />
+
 			<div>
 				<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
 				<p>Tools and software I use daily</p>

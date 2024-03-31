@@ -1,14 +1,10 @@
 import { Menu, Transition } from '@headlessui/react'
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import DropdownMenuItem from '@/components//react/DropdownMenuItem'
 import { menuLinks } from '@/site-config'
 
-interface Props {
-	tags: string[]
-}
-
-export default function DropdownMenu({ tags }: Props) {
+export default function DropdownMenu() {
 	return (
 		<Menu as='div' className='relative inline-block text-left'>
 			<div>

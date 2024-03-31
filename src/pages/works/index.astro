@@ -1,0 +1,109 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+import Button from '@/components/Button.astro'
+import ProjectCard from '../../components/ProjectCard.astro'
+---
+
+<PageLayout meta={{ title: 'Works' }}>
+	<div class='w-full'>
+		<Button title='Back' href='/' style='button'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				>
+				</path>
+			</svg>
+		</Button>
+
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Works</h1>
+				<p>Project I have done</p>
+			</div>
+			<div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
+				<ProjectCard
+					href='https://www.google.com'
+					heading='Consectetur'
+					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+					imagePath='/src/assets/coming-soon.png'
+					altText='Example'
+					className='w-full'
+				/>
+				<ProjectCard
+					as='div'
+					heading='Coming soon...'
+					subheading=''
+					imagePath='/src/assets/coming-soon.png'
+					altText='Lorem, ipsum dolor sit'
+					className='w-full'
+				/>
+				<ProjectCard
+					as='div'
+					heading='Coming soon...'
+					subheading=''
+					imagePath='/src/assets/coming-soon.png'
+					altText='Lorem, ipsum dolor sit'
+					className='w-full'
+				/>
+				<ProjectCard
+					as='div'
+					heading='Coming soon...'
+					subheading=''
+					imagePath='/src/assets/coming-soon.png'
+					altText='Lorem, ipsum dolor sit'
+					className='w-full'
+				/>
+				<ProjectCard
+					as='div'
+					heading='Coming soon...'
+					subheading=''
+					imagePath='/src/assets/coming-soon.png'
+					altText='Lorem, ipsum dolor sit'
+					className='w-full'
+				/>
+			</div>
+
+			<div
+				class='dark:shadow-thick flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-primary/5 dark:bg-secondary dark:ring-white/10 lg:text-left'
+			>
+				<div>
+					<p class='text-xl tracking-tight text-primary dark:text-white lg:text-7xl'>
+						Grab my résumé!
+					</p>
+					<p class='mt-4 text-sm text-zinc-500 dark:text-zinc-400 md:max-w-xs lg:max-w-none'>
+						Unlock the doors to explore the rich tapestry of my professional journey and
+						accomplishments.
+					</p>
+				</div>
+				<div class='mt-8 w-full md:max-w-xs lg:max-w-none'>
+					<button
+						type='button'
+						class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-primary dark:hover:bg-white/5 dark:hover:text-white'
+					>
+						Download my CV
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							class='icon icon-tabler icon-tabler-download h-4 w-4'
+							viewBox='0 0 24 24'
+							stroke-width='2'
+							stroke='currentColor'
+							fill='none'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
+								d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path><path d='M7 11l5 5l5 -5'
+							></path><path d='M12 4l0 12'></path></svg
+						>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</PageLayout>
