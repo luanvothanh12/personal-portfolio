@@ -1,62 +1,15 @@
 ---
+import MobileNav from '@/components/react/MobileNav'
 import ThemeToggle from '@/components/react/ThemeToggle'
 ---
 
 <header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
 	<nav
-		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center'
-		aria-label='global'
+		class='relative mx-auto flex w-full items-center justify-between gap-3 sm:flex sm:items-center'
 	>
-		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>resume</a>
-
-		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
-			<a
-				href='/works'
-				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
-				aria-label='Nav Menu Item'
-				>Works
-			</a>
-			<a
-				href='https://blog.luanvothanh.com/'
-				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
-				aria-label='Nav Menu Item'
-				>Blog
-			</a>
-			<a
-				href='/uses'
-				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
-				aria-label='Nav Menu Item'
-				>Uses
-			</a>
-			<a
-				href='/tools'
-				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
-				aria-label='Nav Menu Item'
-				>Tools
-			</a>
-			<div class='w-full md:max-w-xs lg:max-w-none'>
-				<button
-					type='button'
-					class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-primary-foreground dark:hover:bg-white/5 dark:hover:text-white'
-				>
-					Download my CV
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						class='icon icon-tabler icon-tabler-download h-4 w-4'
-						viewBox='0 0 24 24'
-						stroke-width='2'
-						stroke='currentColor'
-						fill='none'
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
-							d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path><path d='M7 11l5 5l5 -5'
-						></path><path d='M12 4l0 12'></path></svg
-					>
-				</button>
-			</div>
-
-			<ThemeToggle client:visible />
-		</div>
+		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>Vo Thanh Luan</a>
+		<div class='flex-1'></div>
+		<ThemeToggle client:visible />
+		<MobileNav client:visible />
 	</nav>
 </header>

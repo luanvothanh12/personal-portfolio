@@ -25,12 +25,20 @@ export const siteConfig: SiteConfig = {
 
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
-		title: 'Home',
-		path: '/'
+		title: 'Works',
+		path: '/works/'
 	},
 	{
 		title: 'Blog',
-		path: '/blog/'
+		path: 'https://blog.luanvothanh.com/'
+	},
+	{
+		title: 'Uses',
+		path: '/uses/'
+	},
+	{
+		title: 'Tools',
+		path: '/tools/'
 	}
 ]
 
