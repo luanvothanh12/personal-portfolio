@@ -42,6 +42,41 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	}
 ]
 
+interface Project {
+	href: string
+	heading: string
+	subheading: string
+	imagePath: string
+	altText: string
+}
+
+export const projectsList: Project[] = [
+	{
+		href: '',
+		heading: 'Digital Rental Website - Digirent',
+		subheading:
+			'A MERN stack project implemented to allows users to rent digital goods for a period of time.',
+		imagePath: '/src/assets/coming-soon.png',
+		altText: 'Digirent Project'
+	},
+	{
+		href: '',
+		heading: '4SST LED Board - Progressive Web App',
+		subheading:
+			'Progressive Web Application that will let users interact with the LEDs on the number 4 located at RMIT Vietnam, Building 2, Floor 4.',
+		imagePath: '/src/assets/coming-soon.png',
+		altText: 'LED Board Project'
+	},
+	{
+		href: '',
+		heading: 'Personal Blog',
+		subheading:
+			'A blog where I share my thoughts, experiences, and knowledge about technology, programming, and life.',
+		imagePath: '/src/assets/coming-soon.png',
+		altText: 'Personal Blog'
+	}
+]
+
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes

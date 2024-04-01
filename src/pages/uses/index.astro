@@ -3,7 +3,7 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import { Image } from 'astro:assets'
 import Button from '@/components/Button.astro'
 
-const equipments = (await Astro.glob('../equipments/*.md')).sort(
+const equipments = (await Astro.glob('../content/equipments/*.md')).sort(
 	(a: any, b: any) =>
 		new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )

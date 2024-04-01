@@ -1,7 +1,12 @@
 ---
+import { getCollection } from 'astro:content'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import Button from '@/components/Button.astro'
-import ProjectCard from '../../components/ProjectCard.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+)
 ---
 
 <PageLayout meta={{ title: 'Works' }}>
@@ -28,46 +33,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
 				<p>Project I have done</p>
 			</div>
 			<div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
-				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Example'
-					className='w-full'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					className='w-full'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					className='w-full'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					className='w-full'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					className='w-full'
-				/>
+				{projects.map((project) => <ProjectCard project={project} />)}
 			</div>
 
 			<div
@@ -85,7 +51,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
 				<div class='mt-8 w-full md:max-w-xs lg:max-w-none'>
 					<button
 						type='button'
-						class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-primary dark:hover:bg-white/5 dark:hover:text-white'
+						class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
 					>
 						Download my CV
 						<svg
