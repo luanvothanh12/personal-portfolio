@@ -44,12 +44,12 @@ const { Content } = await entry.render()
 			</svg>
 		</Button>
 
-		<div class='mt-5 flex w-full flex-col gap-y-10'>
+		<div class='flex flex-col w-full mt-5 gap-y-10'>
 			<div class='flex flex-col gap-16'>
-				<header class='border-b border-gray-200 pb-10'>
-					<div class='mx-auto flex w-full max-w-6xl flex-col gap-2'>
+				<header class='pb-10 border-b border-gray-200'>
+					<div class='flex flex-col w-full max-w-6xl gap-2 mx-auto'>
 						<Hero title={entry.data.heading} align='start'>
-							<div class='flex flex-col items-center justify-between gap-6 p-2'>
+							<div class='flex flex-col items-center justify-between gap-6 p-2 md:flex-row md:gap-10'>
 								<div class='flex gap-2'>
 									{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 								</div>
@@ -58,8 +58,8 @@ const { Content } = await entry.render()
 						</Hero>
 					</div>
 				</header>
-				<main class='mx-auto w-full max-w-6xl'>
-					<div class='content flex flex-col gap-10'>
+				<main class='w-full max-w-6xl mx-auto'>
+					<div class='flex flex-col gap-10 content'>
 						{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 						<div class='content'>
 							<Content />
@@ -117,65 +117,5 @@ const { Content } = await entry.render()
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.lg\:gap-2 {
-			gap: 0.5rem;
-		}
-		.lg\:gap-4 {
-			gap: 1rem;
-		}
-		.lg\:gap-8 {
-			gap: 2rem;
-		}
-		.lg\:gap-10 {
-			gap: 2.5rem;
-		}
-		.lg\:gap-15 {
-			gap: 3.75rem;
-		}
-		.lg\:gap-20 {
-			gap: 5rem;
-		}
-		.lg\:gap-30 {
-			gap: 7.5rem;
-		}
-		.lg\:gap-48 {
-			gap: 12rem;
-		}
-		.lg\:gap-2 {
-			gap: 0.5rem;
-		}
-		.lg\:gap-4 {
-			gap: 1rem;
-		}
-		.lg\:gap-8 {
-			gap: 2rem;
-		}
-		.lg\:gap-10 {
-			gap: 2.5rem;
-		}
-		.lg\:gap-15 {
-			gap: 3.75rem;
-		}
-		.lg\:gap-20 {
-			gap: 5rem;
-		}
-		.lg\:gap-30 {
-			gap: 7.5rem;
-		}
-		.lg\:gap-48 {
-			gap: 12rem;
-		}
-
-		.details {
-			flex-direction: row;
-			gap: 2.5rem;
-		}
-
-		.content :global(blockquote) {
-			font-size: 2.125rem;
-		}
 	}
 </style>
