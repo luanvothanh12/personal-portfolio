@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
-import DropdownMenuItem from '@/components//react/DropdownMenuItem'
+import DropdownMenuItem from '@/components/modules/DropdownMenuItem'
 import { menuLinks } from '@/site-config'
 
 export default function DropdownMenu() {

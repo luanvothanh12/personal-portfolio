@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import { type CollectionEntry, getCollection } from 'astro:content'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import Button from "../../components/Button.astro";
+import Button from '../../components/Button.astro'
 
 export async function getStaticPaths() {
 	const use = await getCollection('uses')

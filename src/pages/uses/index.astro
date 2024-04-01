@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { Image } from 'astro:assets'
 import Button from '@/components/Button.astro'
-import UseCard from "@/components/UseCard.astro";
+import UseCard from '@/components/UseCard.astro'
 
 const equipments = (await getCollection('uses')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
