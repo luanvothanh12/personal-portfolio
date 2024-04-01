@@ -36,3 +36,7 @@ Furthermore, as part of an effort to enhance user accessibility and engagement, 
 development of a dedicated website portal featuring a chat interface. This interface will seamlessly
 integrate with the proposed LLM model, resulting in an improved and user-friendly experience for
 individuals seeking Dengue-related medical information.
+
+> **DICA Poster**
+
+![Dica Poster](/projects/dica-poster.webp)

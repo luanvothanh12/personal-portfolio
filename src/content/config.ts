@@ -11,5 +11,16 @@ export const collections = {
 			img: z.string(),
 			img_alt: z.string().optional()
 		})
+	}),
+	uses: defineCollection({
+		type: 'content',
+		schema: z.object({
+			heading: z.string(),
+			subheading: z.string(),
+			publishDate: z.coerce.date(),
+			tags: z.array(z.string()),
+			img: z.string(),
+			img_alt: z.string().optional()
+		})
 	})
 }

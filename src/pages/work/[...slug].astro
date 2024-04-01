@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { type CollectionEntry, getCollection } from 'astro:content'
 
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -44,12 +45,14 @@ const { Content } = await entry.render()
 			</svg>
 		</Button>
 
-		<div class='flex flex-col w-full mt-5 gap-y-10'>
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div class='flex flex-col gap-16'>
-				<header class='pb-10 border-b border-gray-200'>
-					<div class='flex flex-col w-full max-w-6xl gap-2 mx-auto'>
+				<header class='border-b border-gray-200 pb-10'>
+					<div class='mx-auto flex w-full max-w-6xl flex-col gap-2'>
 						<Hero title={entry.data.heading} align='start'>
-							<div class='flex flex-col items-center justify-between gap-6 p-2 md:flex-row md:gap-10'>
+							<div
+								class='flex flex-col items-center justify-between gap-6 p-2 md:flex-row md:gap-10'
+							>
 								<div class='flex gap-2'>
 									{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 								</div>
@@ -58,9 +61,19 @@ const { Content } = await entry.render()
 						</Hero>
 					</div>
 				</header>
-				<main class='w-full max-w-6xl mx-auto'>
-					<div class='flex flex-col gap-10 content'>
-						{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+				<main class='mx-auto w-full max-w-6xl'>
+					<div class='content flex flex-col gap-10'>
+						{
+							entry.data.img && (
+								<Image
+									class='rounded-xl border border-slate-300'
+									width={720 * 2}
+									height={1280 * 2}
+									src={entry.data.img}
+									alt={entry.data.img_alt}
+								/>
+							)
+						}
 						<div class='content'>
 							<Content />
 						</div>
@@ -119,3 +132,4 @@ const { Content } = await entry.render()
 		text-decoration-color: currentColor;
 	}
 </style>
+
