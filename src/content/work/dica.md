@@ -3,6 +3,7 @@ heading: Enhancing LLMs for Medical Use in Low-resource Settings
 publishDate: 2020-03-02 00:00:00
 img: /projects/dica-cover.webp
 img_alt: DICA Project
+githubLink: https://github.com/Digirent-Enterprise/caps-client
 subheading: |
   DICA is an intelligent chat portal that could assist the Vietnamese public with questions related to medicine and health issues.
 tags:

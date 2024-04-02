@@ -17,7 +17,7 @@ export const collections = {
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			img: z.string(),
 			img_alt: z.string(),
-			muxPlaybackId: z.string(),
+			githubLink: z.string(),
 			draft: z.boolean().default(false)
 		})
 	}),
