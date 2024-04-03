@@ -15,6 +15,14 @@ export const collections = {
 			subheading: z.string(),
 			publishDate: z.coerce.date(),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			subImages: z
+				.array(
+					z.object({
+						img: z.string(),
+						img_alt: z.string()
+					})
+				)
+				.default([]),
 			img: z.string(),
 			img_alt: z.string(),
 			githubLink: z.string(),
