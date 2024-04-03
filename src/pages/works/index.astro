@@ -50,6 +50,7 @@ const projects = (await getCollection('work')).sort(
 				</div>
 				<div class='mt-8 w-full md:max-w-xs lg:max-w-none'>
 					<button
+						id='downloadCV'
 						type='button'
 						class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
 					>
@@ -73,3 +74,24 @@ const projects = (await getCollection('work')).sort(
 		</div>
 	</div>
 </PageLayout>
+
+<script>
+	const resumeUrl =
+		'https://projects-bucket-luanvothanh.s3.ap-southeast-1.amazonaws.com/Vo_Thanh_Luan_resume.pdf'
+
+	function downloadPDF() {
+		if (resumeUrl) {
+			const link = document.createElement('a')
+			link.href = resumeUrl
+			link.download = 'Vo_Thanh_Luan_resume.pdf'
+			document.body.appendChild(link)
+			link.click()
+			document.body.removeChild(link)
+		} else {
+			console.error('Resume URL is not provided.')
+		}
+	}
+
+	const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement
+	downloadButton.addEventListener('click', downloadPDF)
+</script>
