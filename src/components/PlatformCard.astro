@@ -1,0 +1,31 @@
+---
+import { Icons } from '@/components/elements/Icons'
+
+interface Props {
+	url: string
+	type: any
+	username: string
+}
+
+const { url, type, username, description } = Astro.props
+---
+
+<a href=`${url}` rel='noreferrer noopener' target='_blank'>
+	<div
+		class='mb-5 flex w-72 rounded-[4px] border border-border bg-primary-foreground p-3 transition-all hover:border-foreground/25 hover:shadow-sm'
+	>
+		{type === 'github' && <Icons.github client:only='react' class='size-6' />}
+		{type === 'discord' && <Icons.discord client:only='react' class='size-6' />}
+		{type === 'facebook' && <Icons.facebook client:only='react' class='size-6' />}
+		{type === 'reddit' && <Icons.reddit client:only='react' class='size-6' />}
+		{type === 'steam' && <Icons.steam client:only='react' class='size-6' />}
+		{type === 'instagram' && <Icons.instagram client:only='react' class='size-6' />}
+
+		<div class='ml-3 flex-grow font-semibold text-primary'>
+			{username}
+		</div>
+		<div>
+			<Icons.links client:only='react' class='size-6 text-gray-400' />
+		</div>
+	</div>
+</a>

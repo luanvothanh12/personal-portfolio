@@ -25,6 +25,10 @@ export const siteConfig: SiteConfig = {
 
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
+		title: 'Background',
+		path: '/background/'
+	},
+	{
 		title: 'Works',
 		path: '/works/'
 	},
@@ -42,39 +46,98 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	}
 ]
 
-interface Project {
-	href: string
-	heading: string
-	subheading: string
-	imagePath: string
-	altText: string
+export const openSourceProject = [
+	{
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
+	},
+	{
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
+	},
+	{
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
+	},
+	{
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
+	},
+	{
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
+	}
+]
+
+export const socialMedia = {
+	github: 'https://github.com/s3822042',
+	linkedin: 'https://linkedin.com/in/luanvothanh/',
+	twitter: 'https://twitter.com/luanvothanh__',
+	instagram: 'https://instagram.com/luanv_othanh/',
+	youtube: '',
+	steam: 'https://steamcommunity.com/profiles/76561198406125679/',
+	reddit: 'https://reddit.com/user/MoreAd8352/',
+	spotify: '',
+	discord: 'https://discord.gg/YeADSh3CBV',
+	facebook: 'https://fb.com/ciaraluanvothanh'
 }
 
-export const projectsList: Project[] = [
+export const platforms = [
 	{
-		href: '',
-		heading: 'Digital Rental Website - Digirent',
-		subheading:
-			'A MERN stack project implemented to allows users to rent digital goods for a period of time.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'Digirent Project'
+		url: socialMedia.github,
+		type: 'github',
+		username: 's3822042'
 	},
 	{
-		href: '',
-		heading: '4SST LED Board - Progressive Web App',
-		subheading:
-			'Progressive Web Application that will let users interact with the LEDs on the number 4 located at RMIT Vietnam, Building 2, Floor 4.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'LED Board Project'
+		url: socialMedia.facebook,
+		type: 'facebook',
+		username: 'Luân Võ Thành'
 	},
 	{
-		href: '',
-		heading: 'Personal Blog',
-		subheading:
-			'A blog where I share my thoughts, experiences, and knowledge about technology, programming, and life.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'Personal Blog'
-	}
+		url: socialMedia.instagram,
+		type: 'instagram',
+		username: 'Luân Võ Thành'
+	},
+	{
+		url: socialMedia.reddit,
+		type: 'reddit',
+		username: 'Luan Vo Thanh'
+	},
+	{
+		url: socialMedia.steam,
+		type: 'steam',
+		username: 'paulluanvothanh'
+	},
+	{
+		url: socialMedia.discord,
+		type: 'discord',
+		username: 'Algorithm Challenge'
+	},
 ]
 
 // https://expressive-code.com/reference/configuration/
