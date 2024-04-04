@@ -10,7 +10,7 @@
       "@/components/*": ["src/components/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/utils": ["src/utils/index.ts"],
-      "@/lib": ["src/lib/index.ts"],
+      "@/lib/*": ["src/lib/*"],
       "@/types": ["src/types.ts"],
       "@/site-config": ["src/site.config.ts"]
     },
