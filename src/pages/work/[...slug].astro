@@ -1,16 +1,13 @@
 ---
+import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { Image } from 'astro:assets'
 import { type CollectionEntry, getCollection } from 'astro:content'
-import { GitHubLogoIcon } from '@radix-ui/react-icons'
-
-import PageLayout from '@/layouts/BaseLayout.astro'
-
-import Hero from '@/components/Hero.astro'
 
 import Button from '@/components/Button.astro'
+import Hero from '@/components/Hero.astro'
+import ImageCarousel from '@/components/modules/ImageCarousel'
 import Pill from '@/components/Pill.astro'
-
-import ImageCarousel from '@/components/elements/ImageCarousel'
+import PageLayout from '@/layouts/BaseLayout.astro'
 
 interface Props {
 	entry: CollectionEntry<'work'>
@@ -89,7 +86,7 @@ const { Content } = await entry.render()
 										type='button'
 										class='mb-2 me-2 inline-flex items-center rounded-lg border border-border bg-primary-foreground px-5 py-2.5 text-center text-sm font-medium hover:bg-input'
 									>
-										<div class='me-2 h-4 w-4'>
+										<div class='me-2 size-4'>
 											<GitHubLogoIcon />
 										</div>
 										GitHub

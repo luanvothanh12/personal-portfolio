@@ -1,3 +1,4 @@
+import { CardImage, CardTitle } from '@/components/elements/Card'
 import {
 	Carousel,
 	CarouselContent,
@@ -5,7 +6,6 @@ import {
 	CarouselNext,
 	CarouselPrevious
 } from '@/components/elements/Carousel'
-import { CardImage, CardTitle } from '@/components/elements/Card'
 
 interface SubImageProps {
 	img: string

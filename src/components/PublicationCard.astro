@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets'
+
+import Button from '@/components/Button.astro'
+import type { Publication } from '@/types'
+
+const { paper, authors, publishedIn, fileFormat, keywords }: Publication = Astro.props
+---
+
+<div class='flex flex-col md:flex-row'>
+	<Image
+		width={720 * 2}
+		height={1280 * 2}
+		src={paper.image}
+		alt={paper.title}
+		class='mr-8 w-full md:size-60 rounded-lg mb-8'
+		loading='eager'
+	/>
+
+	<div class='flex-grow flex flex-col'>
+		<div class='flex justify-between'>
+			<p class='mb-4 text-xl'>{paper.title}</p>
+			<div class='text-xl md:text-3xl hidden md:block'>{paper.publishedYear}</div>
+		</div>
+		<p class='mb-4 italic'>
+			<a href={publishedIn.sourceUrl} class='hover:underline'>
+				{publishedIn.sourceTitle}
+			</a>&nbsp;
+		</p>
+		<p class='mb-4'>
+			<span>Authors: </span>
+			{
+				authors.map((author, index) => (
+					<span key={index}>
+						{index === 0 ? (
+							<strong>
+								<a href={author.url} class='font-bold-600 hover:underline'>
+									{author.name}
+								</a>
+							</strong>
+						) : (
+							<>
+								{', '}
+								<a href={author.url} class='hover:underline'>
+									{author.name}
+								</a>
+							</>
+						)}
+					</span>
+				))
+			}
+		</p>
+		<p class='mb-4'>
+			<span>Keywords: </span>
+			{
+				keywords.reduce((prev, curr, index) => {
+					return index < keywords.length - 1 ? `${prev}${curr}, ` : `${prev}${curr}`
+				}, '')
+			}
+		</p>
+		<div class='my-2 flex items-center space-x-4'>
+			{
+				fileFormat.map((file, index) => (
+					<Button
+						href={`${file.url}`}
+						title={file.type}
+						key={index}
+						class='rounded-lg bg-primary text-blue-500 hover:text-blue-800 dark:hover:text-blue-800'
+					/>
+				))
+			}
+		</div>
+	</div>
+</div>

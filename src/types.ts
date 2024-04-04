@@ -57,10 +57,10 @@ export enum PublishedInType {
 	Thesis = 'Thesis'
 }
 
+export type PublicationFileSource = 'bilb' | 'arxiv' | 'pdf'
+
 export type PublishedIn = {
 	type: PublishedInType
-	url: string
-	date: string
 	sourceTitle: string
 	sourceUrl: string
 }
@@ -68,12 +68,18 @@ export type PublishedIn = {
 export type Paper = {
 	title: string
 	image: string
-	abstract: string
+	publishedYear: string
+}
+
+export type FileFormat = {
+	type: PublicationFileSource
+	url: string
 }
 
 export type Publication = {
 	authors: Author[]
-	publishedIn: PublishedIn[]
+	fileFormat: FileFormat[]
+	publishedIn: PublishedIn
 	paper: Paper
-	tags: string[]
+	keywords: string[]
 }

@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
-import PageLayout from '@/layouts/BaseLayout.astro'
+
 import Button from '@/components/Button.astro'
-import ProjectCard from '@/components/ProjectCard.astro'
 import GitHubProjectCard from '@/components/GitHubProjectCard.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
 import { openSourceProject } from '@/site-config'
 
 const projects = (await getCollection('work')).sort(
@@ -63,7 +64,7 @@ const projects = (await getCollection('work')).sort(
 			</div>
 
 			<div
-				class='dark:shadow-thick flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-primary/5 dark:bg-secondary dark:ring-white/10 lg:text-left'
+				class='flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-primary/5 dark:bg-secondary dark:ring-white/10 lg:text-left'
 			>
 				<div>
 					<p class='text-xl tracking-tight text-primary dark:text-white lg:text-7xl'>
@@ -78,12 +79,12 @@ const projects = (await getCollection('work')).sort(
 					<button
 						id='downloadCV'
 						type='button'
-						class='focus:ring-inline-flex flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
+						class='flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
 					>
 						Download my CV
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
-							class='icon icon-tabler icon-tabler-download h-4 w-4'
+							class='size-4'
 							viewBox='0 0 24 24'
 							stroke-width='2'
 							stroke='currentColor'
@@ -102,20 +103,15 @@ const projects = (await getCollection('work')).sort(
 </PageLayout>
 
 <script>
-	const resumeUrl =
-		'https://projects-bucket-luanvothanh.s3.ap-southeast-1.amazonaws.com/Vo_Thanh_Luan_resume.pdf'
+	import { RESUME_PDF } from '@/site-config'
 
 	function downloadPDF() {
-		if (resumeUrl) {
-			const link = document.createElement('a')
-			link.href = resumeUrl
-			link.download = 'Vo_Thanh_Luan_resume.pdf'
-			document.body.appendChild(link)
-			link.click()
-			document.body.removeChild(link)
-		} else {
-			console.error('Resume URL is not provided.')
-		}
+		const link = document.createElement('a')
+		link.href = RESUME_PDF
+		link.download = 'Vo_Thanh_Luan_resume.pdf'
+		document.body.appendChild(link)
+		link.click()
+		document.body.removeChild(link)
 	}
 
 	const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement

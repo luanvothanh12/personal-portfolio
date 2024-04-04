@@ -1,3 +1,5 @@
+import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
+
 import {
 	type SiteConfig,
 	type MenuLink,
@@ -5,8 +7,7 @@ import {
 	type PlatForm,
 	type Publication,
 	PublishedInType
-} from '@/types'
-import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
+} from './types'
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
@@ -124,23 +125,35 @@ export const publications: Publication[] = [
 	{
 		paper: {
 			title: 'The Importance of Polynomials in Mathematics',
-			abstract:
-				'This paper explores the significance of polynomials in various branches of mathematics.',
-			image: 'https://via.placeholder.com/150'
+			image: 'https://via.placeholder.com/150',
+			publishedYear: '2024'
 		},
 		authors: [{ name: 'John Doe', url: 'https://example.com/authors/john_doe' }],
-		publishedIn: [
+		publishedIn: {
+			type: PublishedInType.Journal,
+			sourceTitle: 'Journal of Mathematics',
+			sourceUrl: 'https://example.com/journal'
+		},
+		fileFormat: [
 			{
-				type: PublishedInType.Journal,
-				url: 'https://example.com/journal',
-				date: '2024-04-07',
-				sourceTitle: 'Journal of Mathematics',
-				sourceUrl: 'https://example.com/journal'
+				type: 'bilb',
+				url: 'https://example.com/bilb'
+			},
+			{
+				type: 'arxiv',
+				url: 'https://example.com/arxiv'
+			},
+			{
+				type: 'pdf',
+				url: 'https://example.com/pdf'
 			}
 		],
-		tags: ['polynomials', 'mathematics', 'research']
+		keywords: ['polynomials', 'mathematics', 'research']
 	}
 ]
+
+export const RESUME_PDF: string =
+	'https://projects-bucket-luanvothanh.s3.ap-southeast-1.amazonaws.com/Vo_Thanh_Luan_resume.pdf'
 
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {

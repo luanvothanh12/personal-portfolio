@@ -1,6 +1,6 @@
 ---
 import { Icons } from '@/components/elements/Icons'
-import type {  PlatForm } from '@/types'
+import type { PlatForm } from '@/types'
 const { url, type, username, description }: PlatForm = Astro.props
 ---
 
@@ -15,7 +15,7 @@ const { url, type, username, description }: PlatForm = Astro.props
 		{type === 'steam' && <Icons.steam client:only='react' class='size-6' />}
 		{type === 'instagram' && <Icons.instagram client:only='react' class='size-6' />}
 
-		<div class='ml-3 flex-grow font-semibold text-primary'>
+		<div class='ml-3 grow font-semibold text-primary'>
 			{username}
 		</div>
 		<div>

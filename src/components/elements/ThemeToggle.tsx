@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import { SunIcon, MoonIcon } from '@radix-ui/react-icons'
 
 const themes = ['light', 'dark']
@@ -37,7 +38,7 @@ export default function ThemeToggle() {
 	}, [])
 
 	return isMounted ? (
-		<div className='inline-flex items-center rounded-3xl bg-gray-200 p-[1px] dark:bg-zinc-600'>
+		<div className='inline-flex items-center rounded-3xl bg-gray-200 p-px dark:bg-zinc-600'>
 			{themes.map((t) => {
 				const checked = t === theme
 				return (
