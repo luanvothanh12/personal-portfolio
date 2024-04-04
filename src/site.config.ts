@@ -1,5 +1,13 @@
-import type { SiteConfig } from '@/types'
 import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
+
+import {
+	type SiteConfig,
+	type MenuLink,
+	type OpenSourceProject,
+	type PlatForm,
+	type Publication,
+	PublishedInType
+} from './types'
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
@@ -7,7 +15,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'Personal Website',
 	// Meta property used as the default description meta property
-	description: 'The official Astro Resume Theme',
+	description: 'Personal website of Vo Thanh Luan',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'en-GB',
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -23,7 +31,11 @@ export const siteConfig: SiteConfig = {
 	}
 }
 
-export const menuLinks: Array<{ title: string; path: string }> = [
+export const menuLinks: MenuLink[] = [
+	{
+		title: 'Background',
+		path: '/background/'
+	},
 	{
 		title: 'Works',
 		path: '/works/'
@@ -42,40 +54,106 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	}
 ]
 
-interface Project {
-	href: string
-	heading: string
-	subheading: string
-	imagePath: string
-	altText: string
-}
-
-export const projectsList: Project[] = [
+export const openSourceProject: OpenSourceProject[] = [
 	{
-		href: '',
-		heading: 'Digital Rental Website - Digirent',
-		subheading:
-			'A MERN stack project implemented to allows users to rent digital goods for a period of time.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'Digirent Project'
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
 	},
 	{
-		href: '',
-		heading: '4SST LED Board - Progressive Web App',
-		subheading:
-			'Progressive Web Application that will let users interact with the LEDs on the number 4 located at RMIT Vietnam, Building 2, Floor 4.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'LED Board Project'
-	},
-	{
-		href: '',
-		heading: 'Personal Blog',
-		subheading:
-			'A blog where I share my thoughts, experiences, and knowledge about technology, programming, and life.',
-		imagePath: '/src/assets/coming-soon.png',
-		altText: 'Personal Blog'
+		url: 'ex',
+		title: 'as',
+		description: 'ass',
+		visibility: 'Public',
+		stars: 0,
+		forks: 0,
+		lang: 'Typescript'
 	}
 ]
+
+export const socialMedia = {
+	github: 'https://github.com/s3822042',
+	linkedin: 'https://linkedin.com/in/luanvothanh/',
+	twitter: 'https://twitter.com/luanvothanh__',
+	instagram: 'https://instagram.com/luanv_othanh/',
+	youtube: '',
+	steam: 'https://steamcommunity.com/profiles/76561198406125679/',
+	reddit: 'https://reddit.com/user/MoreAd8352/',
+	spotify: '',
+	discord: 'https://discord.gg/YeADSh3CBV',
+	facebook: 'https://fb.com/ciaraluanvothanh'
+}
+
+export const platforms: PlatForm[] = [
+	{
+		url: socialMedia.github,
+		type: 'github',
+		username: 's3822042'
+	},
+	{
+		url: socialMedia.facebook,
+		type: 'facebook',
+		username: 'Luân Võ Thành'
+	},
+	{
+		url: socialMedia.instagram,
+		type: 'instagram',
+		username: 'Luân Võ Thành'
+	},
+	{
+		url: socialMedia.reddit,
+		type: 'reddit',
+		username: 'Luan Vo Thanh'
+	},
+	{
+		url: socialMedia.steam,
+		type: 'steam',
+		username: 'paulluanvothanh'
+	},
+	{
+		url: socialMedia.discord,
+		type: 'discord',
+		username: 'Algorithm Challenge'
+	}
+]
+
+export const publications: Publication[] = [
+	{
+		paper: {
+			title: 'The Importance of Polynomials in Mathematics',
+			image: 'https://via.placeholder.com/150',
+			publishedYear: '2024'
+		},
+		authors: [{ name: 'John Doe', url: 'https://example.com/authors/john_doe' }],
+		publishedIn: {
+			type: PublishedInType.Journal,
+			sourceTitle: 'Journal of Mathematics',
+			sourceUrl: 'https://example.com/journal'
+		},
+		fileFormat: [
+			{
+				type: 'bilb',
+				url: 'https://example.com/bilb'
+			},
+			{
+				type: 'arxiv',
+				url: 'https://example.com/arxiv'
+			},
+			{
+				type: 'pdf',
+				url: 'https://example.com/pdf'
+			}
+		],
+		keywords: ['polynomials', 'mathematics', 'research']
+	}
+]
+
+export const RESUME_PDF: string =
+	'https://projects-bucket-luanvothanh.s3.ap-southeast-1.amazonaws.com/Vo_Thanh_Luan_resume.pdf'
 
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {

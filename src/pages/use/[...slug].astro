@@ -1,8 +1,9 @@
 ---
 import { Image } from 'astro:assets'
 import { type CollectionEntry, getCollection } from 'astro:content'
-import PageLayout from '@/layouts/BaseLayout.astro'
+
 import Button from '@/components/Button.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
 
 export async function getStaticPaths() {
 	const use = await getCollection('uses')
@@ -21,7 +22,7 @@ export const prerender = true
 
 <PageLayout meta={{ title: 'Uses' }}>
 	<div class='w-full'>
-		<Button title='Back' href='/uses' style='button'>
+		<Button title='Back' href='/uses'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -37,24 +38,38 @@ export const prerender = true
 			</svg>
 		</Button>
 
-		<div class='mt-5 flex w-full flex-col gap-y-10'>
-			<div class='flex flex-col gap-16'>
-				{
-					entry.data.img && (
-						<Image
-							class='rounded-xl border border-slate-300'
-							width={720 * 2}
-							height={1280 * 2}
-							src={entry.data.img}
-							alt={entry.data.img_alt}
-						/>
-					)
-				}
+		<div class='mt-5 flex w-full flex-col'>
+			<div class='mx-auto flex flex-col'>
+				<div class='mb-8'>
+					{
+						entry.data.img && (
+							<Image
+								class='rounded-xl border border-slate-300'
+								width={720 * 2}
+								height={1280 * 2}
+								src={entry.data.img}
+								alt={entry.data.img_alt}
+							/>
+						)
+					}
+				</div>
+
+				<h1 class='my-1 font-satoshi text-3xl'>{entry.data.heading}</h1>
+				<p>{entry.data.subheading}</p>
+				<hr class='my-4 border-t border-zinc-400' />
+				<div class='content'>
+					<Content />
+				</div>
+				<span
+					class='list-disc text-2xl underline decoration-orange-500 underline-offset-2 hover:text-orange-500'
+				></span>
 			</div>
-			<h1 class='my-1 font-satoshi text-3xl'>{entry.data.heading}</h1>
-			<p>{entry.data.subheading}</p>
-			<hr class='my-4 border-t border-zinc-400' />
-			<Content />
 		</div>
 	</div>
 </PageLayout>
+
+<style>
+	.content > :global(* + *) {
+		margin-top: 1rem;
+	}
+</style>

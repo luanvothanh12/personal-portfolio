@@ -1,11 +1,37 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-	extends: ['plugin:astro/recommended'],
+	extends: [
+		'plugin:astro/recommended',
+		"plugin:tailwindcss/recommended",
+		'plugin:import/warnings'
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		tsconfigRootDir: __dirname,
 		sourceType: 'module',
 		ecmaVersion: 'latest'
+	},
+	plugins: ["@typescript-eslint"],
+	rules: {
+		"import/order": [
+			"error",
+			{
+				groups: ["builtin", "external", "internal"],
+				pathGroups: [
+					{
+						pattern: "react",
+						group: "external",
+						position: "before",
+					},
+				],
+				pathGroupsExcludedImportTypes: ["react"],
+				"newlines-between": "always",
+				alphabetize: {
+					order: "asc",
+					caseInsensitive: true,
+				},
+			},
+		],
 	},
 	overrides: [
 		{

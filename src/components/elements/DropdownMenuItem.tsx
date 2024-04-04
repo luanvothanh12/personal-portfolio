@@ -1,5 +1,7 @@
-import { Menu } from '@headlessui/react'
 import React from 'react'
+
+import { Menu } from '@headlessui/react'
+
 import { cn } from '@/utils'
 
 type Props = {

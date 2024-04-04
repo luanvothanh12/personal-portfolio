@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets'
+
+import Button from '@/components/Button.astro'
+import PublicationCard from '@/components/PublicationCard.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
+import { publications } from '@/site-config'
+---
+
+<PageLayout meta={{ title: 'Background' }}>
+	<div class='w-full'>
+		<Button title='Back' href='/'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				>
+				</path>
+			</svg>
+		</Button>
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<div>
+				<div class='wolverine relative h-60 w-full overflow-hidden rounded-lg'>
+					<Image
+						src='https://res.cloudinary.com/dwshjkwds/image/upload/v1712221211/personal-website/background/rmit-sgs_xawysq.webp'
+						alt='AI'
+						width={720 * 2}
+						height={1280 * 2}
+						class='absolute size-full object-cover object-center mix-blend-overlay'
+					/>
+					<div class='absolute bottom-0 right-0 pb-6 pr-4 text-white'>
+						<h1 class='text-2xl font-bold'>My Motivation</h1>
+						<h2>Why did I chose to study IT?</h2>
+					</div>
+				</div>
+			</div>
+			<div class='leading-relaxed'>
+				<p class='mb-2'>
+					My passion for AI ignited when I delved into courses on Artificial Intelligence offered by
+					Microsoft and MITx. These courses provided me with a comprehensive understanding of this
+					captivating field of modern Information Technology. My specific interest in AI revolves
+					around natural language processing, a branch of Deep Learning. Since then, delving deeper
+					into NLP and Semantic Analysis has been a burning desire, driven by my aspiration to make
+					a meaningful impact on social issues through the application of deep learning and
+					Artificial Intelligence. Doctor Lex Fridman, one of the lecturers in the Deep Learning
+					video course from MIT, has been a significant source of inspiration in my journey.
+				</p>
+
+				<p class='mb-2'>
+					As a machine learning engineer, my focus is on leveraging AI technologies to develop
+					innovative solutions that address real-world challenges. I am particularly passionate
+					about pushing the boundaries of AI research and development to create intelligent systems
+					that can understand and interact with human language in a more natural and meaningful way.
+				</p>
+
+				<p class='mb-2'>
+					My academic background in literature has instilled in me a unique perspective and
+					appreciation for language, which I believe enhances my ability to work in the field of
+					natural language processing. Combining my passion for AI with my expertise in machine
+					learning, I am committed to advancing the field and contributing to its continued
+					evolution.
+				</p>
+
+				<p class='mb-2'>
+					The convergence of technology and business presents exciting opportunities for innovation
+					and growth. As a machine learning engineer, I am keen to explore the intersection of AI
+					and business, seeking to develop AI-driven solutions that drive business growth, improve
+					efficiency, and enhance decision-making processes.
+				</p>
+			</div>
+			<div class='mb-8 border-l-4 border-border bg-gray-100 p-4 dark:bg-primary-foreground'>
+				<p class='italic'>
+					<i
+						>“AI winters were not due to imagination traps, but due to lack of imaginations.
+						Imaginations bring order out of chaos. Deep learning with deep imagination is the road
+						map to AI springs and AI autumns.”</i
+					>
+				</p>
+				<p class='mt-4'>
+					<strong
+						>Amit Ray, Compassionate Artificial Superintelligence AI 5.0 - AI with Blockchain, BMI,
+						Drone, IOT, and Biometric Technologies</strong
+					>
+				</p>
+			</div>
+		</div>
+
+		<div>
+			<h1 class='mb-1 text-2xl font-bold'>Publications</h1>
+			<p>Paper I have contributed</p>
+		</div>
+
+		<section class='mt-4'>
+			<div class='grid grid-cols-1 gap-4'>
+				{
+					publications && publications.length > 0 ? (
+						publications.map((publication, key) => (
+							<PublicationCard
+								key={key}
+								authors={publication.authors}
+								paper={publication.paper}
+								fileFormat={publication.fileFormat}
+								publishedIn={publication.publishedIn}
+								keywords={publication.keywords}
+							/>
+						))
+					) : (
+						<div>There is no publications found!</div>
+					)
+				}
+			</div>
+		</section>
+	</div>
+</PageLayout>
+
+<style>
+	.wolverine {
+		background: linear-gradient(90deg, #bdbfba 4%, #5a5c5b 98%),
+			linear-gradient(74deg, rgba(255, 255, 255, 0.5) 54%, rgba(0, 0, 0, 0.5) 100%);
+		background-blend-mode: multiply;
+	}
+</style>

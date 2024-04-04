@@ -1,9 +1,10 @@
 ---
-import { getCollection } from 'astro:content'
-import PageLayout from '@/layouts/BaseLayout.astro'
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
 import Button from '@/components/Button.astro'
 import UseCard from '@/components/UseCard.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
 
 const equipments = (await getCollection('uses')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -12,7 +13,7 @@ const equipments = (await getCollection('uses')).sort(
 
 <PageLayout meta={{ title: 'Uses' }}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+		<Button title='Back' href='/'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -31,7 +32,7 @@ const equipments = (await getCollection('uses')).sort(
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
 				<h1 class='mb-1 text-2xl font-bold'>Uses</h1>
-				<p>Equipments I use</p>
+				<p>Equipments I used</p>
 			</div>
 
 			<section>
