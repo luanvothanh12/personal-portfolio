@@ -6,7 +6,7 @@ import Label from '@/components/Label.astro'
 import Avatar from '@/components/elements/Avatar'
 import { Image } from 'astro:assets'
 import astro from '@/assets/about-astro.png'
-import { siteConfig, socialMedia } from '@/site-config'
+import { siteConfig } from '@/site-config'
 import { platforms } from '@/site-config'
 import PlatformCard from '@/components/PlatformCard.astro'
 ---
@@ -61,7 +61,6 @@ import PlatformCard from '@/components/PlatformCard.astro'
 			</div>
 		</section>
 
-
 		<Section title='About'>
 			<p class='text-muted-foreground'>
 				Experienced software engineer with a year in software engineering, skilled in coding and
@@ -73,9 +72,18 @@ import PlatformCard from '@/components/PlatformCard.astro'
 			<div class='flex justify-between'>
 				<div class='grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-2'>
 					{
-						platforms.map((platform) => (
-							<PlatformCard url={platform.url} username={platform.username} type={platform.type} />
-						))
+						platforms && platforms.length > 0 ? (
+							platforms.map((platform, key) => (
+								<PlatformCard
+									key={key}
+									url={platform.url}
+									username={platform.username}
+									type={platform.type}
+								/>
+							))
+						) : (
+							<div>There is no platform found!</div>
+						)
 					}
 				</div>
 			</div>

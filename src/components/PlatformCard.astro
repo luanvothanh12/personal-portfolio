@@ -1,13 +1,7 @@
 ---
 import { Icons } from '@/components/elements/Icons'
-
-interface Props {
-	url: string
-	type: any
-	username: string
-}
-
-const { url, type, username, description } = Astro.props
+import type {  PlatForm } from '@/types'
+const { url, type, username, description }: PlatForm = Astro.props
 ---
 
 <a href=`${url}` rel='noreferrer noopener' target='_blank'>

@@ -13,7 +13,7 @@ const projects = (await getCollection('work')).sort(
 
 <PageLayout meta={{ title: 'Works' }}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+		<Button title='Back' href='/'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -44,17 +44,21 @@ const projects = (await getCollection('work')).sort(
 			</div>
 			<div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-2 md:gap-y-8'>
 				{
-					openSourceProject.map((project) => (
-						<GitHubProjectCard
-							title={project.title}
-							description={project.description}
-							lang={project.lang}
-							stars={project.stars}
-							forks={project.forks}
-							visibility={project.visibility}
-							url={project.url}
-						/>
-					))
+					openSourceProject && openSourceProject.length > 0 ? (
+						openSourceProject.map((project) => (
+							<GitHubProjectCard
+								title={project.title}
+								description={project.description}
+								lang={project.lang}
+								stars={project.stars}
+								forks={project.forks}
+								visibility={project.visibility}
+								url={project.url}
+							/>
+						))
+					) : (
+						<div>There is no open source project found!</div>
+					)
 				}
 			</div>
 

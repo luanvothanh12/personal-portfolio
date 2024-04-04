@@ -1,4 +1,11 @@
-import type { SiteConfig } from '@/types'
+import {
+	type SiteConfig,
+	type MenuLink,
+	type OpenSourceProject,
+	type PlatForm,
+	type Publication,
+	PublishedInType
+} from '@/types'
 import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
 
 export const siteConfig: SiteConfig = {
@@ -23,7 +30,7 @@ export const siteConfig: SiteConfig = {
 	}
 }
 
-export const menuLinks: Array<{ title: string; path: string }> = [
+export const menuLinks: MenuLink[] = [
 	{
 		title: 'Background',
 		path: '/background/'
@@ -46,34 +53,7 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	}
 ]
 
-export const openSourceProject = [
-	{
-		url: 'ex',
-		title: 'as',
-		description: 'ass',
-		visibility: 'Public',
-		stars: 0,
-		forks: 0,
-		lang: 'Typescript'
-	},
-	{
-		url: 'ex',
-		title: 'as',
-		description: 'ass',
-		visibility: 'Public',
-		stars: 0,
-		forks: 0,
-		lang: 'Typescript'
-	},
-	{
-		url: 'ex',
-		title: 'as',
-		description: 'ass',
-		visibility: 'Public',
-		stars: 0,
-		forks: 0,
-		lang: 'Typescript'
-	},
+export const openSourceProject: OpenSourceProject[] = [
 	{
 		url: 'ex',
 		title: 'as',
@@ -107,7 +87,7 @@ export const socialMedia = {
 	facebook: 'https://fb.com/ciaraluanvothanh'
 }
 
-export const platforms = [
+export const platforms: PlatForm[] = [
 	{
 		url: socialMedia.github,
 		type: 'github',
@@ -137,7 +117,29 @@ export const platforms = [
 		url: socialMedia.discord,
 		type: 'discord',
 		username: 'Algorithm Challenge'
-	},
+	}
+]
+
+export const publications: Publication[] = [
+	{
+		paper: {
+			title: 'The Importance of Polynomials in Mathematics',
+			abstract:
+				'This paper explores the significance of polynomials in various branches of mathematics.',
+			image: 'https://via.placeholder.com/150'
+		},
+		authors: [{ name: 'John Doe', url: 'https://example.com/authors/john_doe' }],
+		publishedIn: [
+			{
+				type: PublishedInType.Journal,
+				url: 'https://example.com/journal',
+				date: '2024-04-07',
+				sourceTitle: 'Journal of Mathematics',
+				sourceUrl: 'https://example.com/journal'
+			}
+		],
+		tags: ['polynomials', 'mathematics', 'research']
+	}
 ]
 
 // https://expressive-code.com/reference/configuration/
