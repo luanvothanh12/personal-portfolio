@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 import Button from '@/components/Button.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -21,7 +21,7 @@ export const prerender = true
 ---
 
 <PageLayout meta={{ title: 'Uses' }}>
-	<div class='w-full'>
+	<div class='animate w-full'>
 		<Button title='Back' href='/uses'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'

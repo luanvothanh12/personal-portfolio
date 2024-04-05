@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 
 import Button from '@/components/Button.astro'
@@ -12,7 +11,7 @@ const equipments = (await getCollection('uses')).sort(
 ---
 
 <PageLayout meta={{ title: 'Uses' }}>
-	<div class='w-full'>
+	<div class='animate w-full'>
 		<Button title='Back' href='/'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'

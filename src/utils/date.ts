@@ -15,3 +15,11 @@ export function getFormattedDate(
 
 	return dateFormat.format(new Date(date))
 }
+
+export function formatDate(date: string) {
+	return new Date(date).toLocaleDateString('en-US', {
+		month: 'short',
+		day: 'numeric',
+		year: 'numeric'
+	})
+}

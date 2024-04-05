@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import Button from '@/components/Button.astro'
+import GitHubCalendar from '@/components/elements/GitHubCalendar'
 import GitHubProjectCard from '@/components/GitHubProjectCard.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -13,7 +14,7 @@ const projects = (await getCollection('work')).sort(
 ---
 
 <PageLayout meta={{ title: 'Works' }}>
-	<div class='w-full'>
+	<div class='animate w-full'>
 		<Button title='Back' href='/'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
@@ -62,58 +63,9 @@ const projects = (await getCollection('work')).sort(
 					)
 				}
 			</div>
-
-			<div
-				class='flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-primary/5 dark:bg-secondary dark:ring-white/10 lg:text-left'
-			>
-				<div>
-					<p class='text-xl tracking-tight text-primary dark:text-white lg:text-7xl'>
-						Grab my résumé!
-					</p>
-					<p class='mt-4 text-sm text-zinc-500 dark:text-zinc-400 md:max-w-xs lg:max-w-none'>
-						Unlock the doors to explore the rich tapestry of my professional journey and
-						accomplishments.
-					</p>
-				</div>
-				<div class='mt-8 w-full md:max-w-xs lg:max-w-none'>
-					<button
-						id='downloadCV'
-						type='button'
-						class='flex h-12 w-full items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
-					>
-						Download my CV
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							class='size-4'
-							viewBox='0 0 24 24'
-							stroke-width='2'
-							stroke='currentColor'
-							fill='none'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
-								d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path><path d='M7 11l5 5l5 -5'
-							></path><path d='M12 4l0 12'></path></svg
-						>
-					</button>
-				</div>
+			<div class='flex justify-center'>
+				<GitHubCalendar client:only='react' username={'s3822042'} />
 			</div>
 		</div>
 	</div>
 </PageLayout>
-
-<script>
-	import { RESUME_PDF } from '@/site-config'
-
-	function downloadPDF() {
-		const link = document.createElement('a')
-		link.href = RESUME_PDF
-		link.download = 'Vo_Thanh_Luan_resume.pdf'
-		document.body.appendChild(link)
-		link.click()
-		document.body.removeChild(link)
-	}
-
-	const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement
-	downloadButton.addEventListener('click', downloadPDF)
-</script>
