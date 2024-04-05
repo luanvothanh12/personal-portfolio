@@ -98,11 +98,8 @@ import { formatDate } from '@/utils'
 
 			<div class='grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2'>
 				{
-					jobs.map((job, key) => (
-						<div
-							key={key}
-							class='relative flex max-w-2xl items-start gap-x-4 before:absolute before:bottom-0 before:left-9 before:top-20 before:h-[calc(100%-70px)] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800 lg:gap-x-6'
-						>
+					jobs.map((job) => (
+						<div class='relative flex max-w-2xl items-start gap-x-4 before:absolute before:bottom-0 before:left-9 before:top-20 before:h-[calc(100%-70px)] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800 lg:gap-x-6'>
 							<a
 								href={job.url}
 								rel='noreferrer noopener'
@@ -111,7 +108,7 @@ import { formatDate } from '@/utils'
 							>
 								<Image
 									src={job.logo}
-									className='object-cover duration-300'
+									class='object-cover duration-300'
 									alt={`${job.name} logo`}
 									width={50}
 									height={50}

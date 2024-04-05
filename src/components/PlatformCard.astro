@@ -11,6 +11,7 @@ const { url, type, username } = Astro.props
 		{type === 'discord' && <Icons.discord client:only='react' />}
 		{type === 'facebook' && <Icons.facebook client:only='react' />}
 		{type === 'reddit' && <Icons.reddit client:only='react' />}
+		{type === 'x' && <Icons.x client:only='react' />}
 		{type === 'steam' && <Icons.steam client:only='react' />}
 		{type === 'instagram' && <Icons.instagram client:only='react' />}
 
@@ -22,3 +23,4 @@ const { url, type, username } = Astro.props
 		</div>
 	</div>
 </a>
+

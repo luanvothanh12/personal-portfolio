@@ -57,21 +57,13 @@ export const menuLinks: MenuLink[] = [
 
 export const openSourceProject: OpenSourceProject[] = [
 	{
-		url: 'ex',
-		title: 'as',
-		description: 'ass',
+		url: 'https://github.com/shadcn-ui/ui',
+		title: 'shadcn-ui',
+		description:
+			'Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.',
 		visibility: 'Public',
-		stars: 0,
-		forks: 0,
-		lang: 'Typescript'
-	},
-	{
-		url: 'ex',
-		title: 'as',
-		description: 'ass',
-		visibility: 'Public',
-		stars: 0,
-		forks: 0,
+		stars: '54.9k',
+		forks: '2.9k',
 		lang: 'Typescript'
 	}
 ]
@@ -79,7 +71,7 @@ export const openSourceProject: OpenSourceProject[] = [
 export const socialMedia = {
 	github: 'https://github.com/s3822042',
 	linkedin: 'https://linkedin.com/in/luanvothanh/',
-	twitter: 'https://twitter.com/luanvothanh__',
+	x: 'https://twitter.com/luanvothanh__',
 	instagram: 'https://instagram.com/luanv_othanh/',
 	youtube: '',
 	steam: 'https://steamcommunity.com/profiles/76561198406125679/',
@@ -111,9 +103,9 @@ export const platforms: PlatForm[] = [
 		username: 'Luan Vo Thanh'
 	},
 	{
-		url: socialMedia.steam,
-		type: 'steam',
-		username: 'paulluanvothanh'
+		url: socialMedia.x,
+		type: 'x',
+		username: '@luanvothanh__'
 	},
 	{
 		url: socialMedia.discord,
@@ -153,7 +145,7 @@ export const publications: Publication[] = [
 	}
 ]
 
-export const jobs = [
+export const jobs: Job[] = [
 	{
 		url: 'https://mit.dk',
 		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314541/personal-website/background/netcompany_fulmjy.webp',

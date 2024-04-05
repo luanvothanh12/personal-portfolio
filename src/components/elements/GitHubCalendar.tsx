@@ -1,4 +1,4 @@
-import React, { type FunctionComponent, useCallback, useEffect, useState } from 'react'
+import { type FunctionComponent, useCallback, useEffect, useState } from 'react'
 
 import Calendar, { type Props as ActivityCalendarProps, Skeleton } from 'react-activity-calendar'
 
