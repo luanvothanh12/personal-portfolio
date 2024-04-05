@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import Button from '@/components/Button.astro'
+import GitHubCalendar from '@/components/elements/GitHubCalendar'
 import GitHubProjectCard from '@/components/GitHubProjectCard.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -62,6 +63,7 @@ const projects = (await getCollection('work')).sort(
 					)
 				}
 			</div>
+			<GitHubCalendar client:only='react' username={'s3822042'} />
 
 			<div
 				class='flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-primary/5 dark:bg-secondary dark:ring-white/10 lg:text-left'
