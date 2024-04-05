@@ -63,23 +63,9 @@ const projects = (await getCollection('work')).sort(
 					)
 				}
 			</div>
-			<GitHubCalendar client:only='react' username={'s3822042'} />
+			<div class='flex justify-center'>
+				<GitHubCalendar client:only='react' username={'s3822042'} />
+			</div>
 		</div>
 	</div>
 </PageLayout>
-
-<script>
-	import { RESUME_PDF } from '@/site-config'
-
-	function downloadPDF() {
-		const link = document.createElement('a')
-		link.href = RESUME_PDF
-		link.download = 'Vo_Thanh_Luan_resume.pdf'
-		document.body.appendChild(link)
-		link.click()
-		document.body.removeChild(link)
-	}
-
-	const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement
-	downloadButton.addEventListener('click', downloadPDF)
-</script>

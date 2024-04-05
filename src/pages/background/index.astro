@@ -4,11 +4,12 @@ import { Image } from 'astro:assets'
 import Button from '@/components/Button.astro'
 import PublicationCard from '@/components/PublicationCard.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import { publications } from '@/site-config'
+import { publications, jobs } from '@/site-config'
+import { formatDate } from '@/utils'
 ---
 
 <PageLayout meta={{ title: 'Background' }}>
-	<div class='w-full'>
+	<div class='animate w-full'>
 		<Button title='Back' href='/'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
@@ -26,20 +27,20 @@ import { publications } from '@/site-config'
 		</Button>
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
-				<div class='wolverine relative h-60 w-full overflow-hidden rounded-lg'>
-					<Image
-						src='https://res.cloudinary.com/dwshjkwds/image/upload/v1712221211/personal-website/background/rmit-sgs_xawysq.webp'
-						alt='AI'
-						width={720 * 2}
-						height={1280 * 2}
-						class='absolute size-full object-cover object-center mix-blend-overlay'
-					/>
-					<div class='absolute bottom-0 right-0 pb-6 pr-4 text-white'>
-						<h1 class='text-2xl font-bold'>My Motivation</h1>
-						<h2>Why did I chose to study IT?</h2>
-					</div>
-				</div>
+				<h1 class='mb-1 text-2xl font-bold'>Stories</h1>
+				<p>My motivation</p>
 			</div>
+
+			<div class='wolverine group relative h-60 w-full overflow-hidden rounded-lg'>
+				<Image
+					src='https://res.cloudinary.com/dwshjkwds/image/upload/v1712221211/personal-website/background/rmit-sgs_xawysq.webp'
+					alt='AI'
+					width={720 * 2}
+					height={1280 * 2}
+					class='size-full object-cover object-center'
+				/>
+			</div>
+
 			<div class='leading-relaxed'>
 				<p class='mb-2'>
 					My passion for AI ignited when I delved into courses on Artificial Intelligence offered by
@@ -89,14 +90,58 @@ import { publications } from '@/site-config'
 					>
 				</p>
 			</div>
-		</div>
 
-		<div>
-			<h1 class='mb-1 text-2xl font-bold'>Publications</h1>
-			<p>Paper I have contributed</p>
-		</div>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Work Experience</h1>
+				<p>Professional Background</p>
+			</div>
 
-		<section class='mt-4'>
+			<div class='grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2'>
+				{
+					jobs.map((job, key) => (
+						<div
+							key={key}
+							class='relative flex max-w-2xl items-start gap-x-4 before:absolute before:bottom-0 before:left-9 before:top-20 before:h-[calc(100%-70px)] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800 lg:gap-x-6'
+						>
+							<a
+								href={job.url}
+								rel='noreferrer noopener'
+								target='_blank'
+								class='relative grid min-h-[80px] min-w-[80px] place-items-center text-clip rounded-md border border-zinc-200 p-2 dark:border-zinc-800'
+							>
+								<Image
+									src={job.logo}
+									className='object-cover duration-300'
+									alt={`${job.name} logo`}
+									width={50}
+									height={50}
+								/>
+							</a>
+							<div class='flex flex-col items-start'>
+								<h3 class='text-xl font-semibold'>{job.name}</h3>
+								<p>{job.jobTitle}</p>
+								<time class='mt-2 text-sm uppercase tracking-widest text-zinc-500'>
+									{formatDate(job.startDate)} -{' '}
+									{job.endDate ? (
+										formatDate(job.endDate)
+									) : (
+										<span class='dark:text-primary-color text-tertiary-color'>Present</span>
+									)}
+								</time>
+								<p class='my-4 tracking-tight text-zinc-600 dark:text-zinc-400'>
+									{job.description}
+								</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+
+			<div class='mt-8'>
+				<h1 class='mb-1 text-2xl font-bold'>Publications</h1>
+				<p>Paper I have contributed</p>
+			</div>
+
 			<div class='grid grid-cols-1 gap-4'>
 				{
 					publications && publications.length > 0 ? (
@@ -115,7 +160,7 @@ import { publications } from '@/site-config'
 					)
 				}
 			</div>
-		</section>
+		</div>
 	</div>
 </PageLayout>
 

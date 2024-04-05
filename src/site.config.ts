@@ -6,6 +6,7 @@ import {
 	type OpenSourceProject,
 	type PlatForm,
 	type Publication,
+	type Job,
 	PublishedInType
 } from './types'
 
@@ -149,6 +150,36 @@ export const publications: Publication[] = [
 			}
 		],
 		keywords: ['polynomials', 'mathematics', 'research']
+	}
+]
+
+export const jobs = [
+	{
+		url: 'https://mit.dk',
+		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314541/personal-website/background/netcompany_fulmjy.webp',
+		name: 'Netcompany',
+		jobTitle: 'Software Engineer',
+		startDate: '2023-12-01',
+		endDate: '2023-11-12',
+		description: `Spearheaded front-end development using Vue.js and Typescript in the mit.dk project, elevating user experience for 2.5M+ users.`
+	},
+	{
+		url: 'https://oucru.org',
+		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314634/personal-website/background/oucru_z7xebo.webp',
+		name: 'Oxford University Clinical Research Unit',
+		jobTitle: 'AI Researcher',
+		startDate: '2023',
+		endDate: '2023-10-09',
+		description: `Contributed as an AI researcher for OCURU’s DICA, an intelligent chat portal aimed at assisting the Vietnamese public with queries related to medicine and health issues.`
+	},
+	{
+		url: 'https://intel.com',
+		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712311123/personal-website/background/intel_bvsbka.webp',
+		name: 'Intel Corporation',
+		jobTitle: 'Product Development Engineer',
+		startDate: '2021-10-12',
+		endDate: '2022-03-28',
+		description: `Successfully integrated the LOT with Intel’s testing infrastructure, enabling real-time monitoring and analysis, resulting in a 25% reduction in testing cycle times and streamlined CPU and chipset testing processes.`
 	}
 ]
 
