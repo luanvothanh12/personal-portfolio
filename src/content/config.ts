@@ -29,6 +29,27 @@ export const collections = {
 			draft: z.boolean().default(false)
 		})
 	}),
+	pet: defineCollection({
+		type: 'content',
+		schema: z.object({
+			heading: z.string(),
+			subheading: z.string(),
+			publishDate: z.coerce.date(),
+			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			subImages: z
+				.array(
+					z.object({
+						img: z.string(),
+						img_alt: z.string()
+					})
+				)
+				.default([]),
+			img: z.string(),
+			img_alt: z.string(),
+			githubLink: z.string(),
+			draft: z.boolean().default(false)
+		})
+	}),
 	uses: defineCollection({
 		type: 'content',
 		schema: z.object({

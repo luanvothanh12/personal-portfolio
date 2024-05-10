@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
+import PetProjectCard from '../components/PetProjectCard.astro'
 import Button from '@/components/Button.astro'
 import GitHubCalendar from '@/components/elements/GitHubCalendar'
 import GitHubProjectCard from '@/components/GitHubProjectCard.astro'
@@ -9,6 +10,10 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import { openSourceProject } from '@/site-config'
 
 const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+)
+
+const pets = (await getCollection('pet')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 )
 ---
@@ -38,6 +43,14 @@ const projects = (await getCollection('work')).sort(
 			</div>
 			<div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
 				{projects.map((project) => <ProjectCard project={project} />)}
+			</div>
+
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Works</h1>
+				<p>Pest Project I have completed</p>
+			</div>
+			<div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
+				{pets.map((project) => <PetProjectCard project={project} />)}
 			</div>
 
 			<div>
