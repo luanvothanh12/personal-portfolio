@@ -12,9 +12,6 @@ subheading: |
   My journey in creating a feature-rich blog platform using the latest web technologies to deliver a seamless reading and writing experience.
 
 tags:
-  - NextJS
-  - trpc
-  - React-Query
   - Web Development
 ---
 

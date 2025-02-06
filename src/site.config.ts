@@ -69,15 +69,15 @@ export const openSourceProject: OpenSourceProject[] = [
 ]
 
 export const socialMedia = {
-	github: 'https://github.com/s3822042',
+	github: 'https://github.com/luanvothanh12/',
 	linkedin: 'https://linkedin.com/in/luanvothanh/',
-	x: 'https://twitter.com/luanvothanh__',
+	x: 'https://x.com/luanv_othanh/',
 	instagram: 'https://instagram.com/luanv_othanh/',
 	youtube: '',
 	steam: 'https://steamcommunity.com/profiles/76561198406125679/',
 	reddit: 'https://reddit.com/user/MoreAd8352/',
 	spotify: '',
-	discord: 'https://discord.gg/YeADSh3CBV',
+	discord: 'https://discord.com/',
 	facebook: 'https://fb.com/ciaraluanvothanh'
 }
 
@@ -85,7 +85,7 @@ export const platforms: PlatForm[] = [
 	{
 		url: socialMedia.github,
 		type: 'github',
-		username: 's3822042'
+		username: 'luanvothanh12'
 	},
 	{
 		url: socialMedia.facebook,
@@ -105,12 +105,12 @@ export const platforms: PlatForm[] = [
 	{
 		url: socialMedia.x,
 		type: 'x',
-		username: '@luanvothanh__'
+		username: '@luanv_othanh'
 	},
 	{
 		url: socialMedia.discord,
 		type: 'discord',
-		username: 'Algorithm Challenge'
+		username: 'luanv_othanh'
 	}
 ]
 
@@ -147,12 +147,20 @@ export const publications: Publication[] = [
 
 export const jobs: Job[] = [
 	{
+		url: 'https://talknician.com',
+		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1738839881/Talknician_xa0n87.svg',
+		name: 'Talknician',
+		jobTitle: 'Software Engineer',
+		startDate: '2024-04',
+		description: `Led the front-end development for the Talknician project using Next.js and TypeScript, significantly improving user interaction for both factory floor tablets and web browsers`
+	},
+	{
 		url: 'https://mit.dk',
 		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314541/personal-website/background/netcompany_fulmjy.webp',
 		name: 'Netcompany',
 		jobTitle: 'Software Engineer',
-		startDate: '2023-12-01',
-		endDate: '2023-11-12',
+		startDate: '2023-12',
+		endDate: '2023-11',
 		description: `Spearheaded front-end development using Vue.js and Typescript in the mit.dk project, elevating user experience for 2.5M+ users.`
 	},
 	{
@@ -160,8 +168,8 @@ export const jobs: Job[] = [
 		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314634/personal-website/background/oucru_z7xebo.webp',
 		name: 'Oxford University Clinical Research Unit',
 		jobTitle: 'AI Researcher',
-		startDate: '2023',
-		endDate: '2023-10-09',
+		startDate: '2023-03',
+		endDate: '2023-10',
 		description: `Contributed as an AI researcher for OCURU’s DICA, an intelligent chat portal aimed at assisting the Vietnamese public with queries related to medicine and health issues.`
 	},
 	{
