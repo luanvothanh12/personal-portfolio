@@ -1,11 +1,11 @@
 ---
-heading: iPad Pro M4 (2024)
+heading: iPad Pro M4
 subheading: Tablet computer
 publishDate: 2024-04-01
 tags:
   - Computing
 img: https://res.cloudinary.com/dwshjkwds/image/upload/v1715360818/personal-website/uses/ipad-pro-m4_qg9xsz.webp
-img_alt: iPad Pro M4 (2024)
+img_alt: iPad Pro M4
 ---
 
 I’ve recently upgraded to the iPad Pro (2024), and it’s been nothing short of a revelation. The new M4 chip is a powerhouse, making my tablet not just a tool, but a partner in creation. The OLED display brings my work to life with colors and details that are so crisp and vibrant, it feels like I’m painting directly onto a canvas.

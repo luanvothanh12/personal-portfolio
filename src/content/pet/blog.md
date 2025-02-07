@@ -3,7 +3,7 @@ heading: Modern Blog with NextJS, trpc, and React-Query
 publishDate: 2024-05-11 00:00:00
 img: https://res.cloudinary.com/dwshjkwds/image/upload/v1712132642/personal-website/projects/dica/dica-cover_xyqomi.webp
 img_alt: Blog Project Cover
-githubLink: https://github.com/s3822042/Blog-MDX
+githubLink: https://github.com/luanvothanh12/Blog-MDX
 subImages:
   - img: https://res.cloudinary.com/dwshjkwds/image/upload/v1712132642/personal-website/projects/dica/dica-cover_xyqomi.webp
     img_alt: Blog Landing Page

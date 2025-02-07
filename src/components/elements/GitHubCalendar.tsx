@@ -2,7 +2,7 @@ import { type FunctionComponent, useCallback, useEffect, useState } from 'react'
 
 import Calendar, { type Props as ActivityCalendarProps, Skeleton } from 'react-activity-calendar'
 
-import { API_URL, DEFAULT_THEME } from '@/lib/constants'
+import { API_URL, DEFAULT_THEME } from '@/lib/constants/app'
 import type { Activity, ApiErrorResponse, ApiResponse, ThemeInput, Year } from '@/types'
 import { transformData } from '@/utils'
 

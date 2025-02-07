@@ -38,6 +38,10 @@ export const menuLinks: MenuLink[] = [
 		path: '/background/'
 	},
 	{
+		title: 'Services',
+		path: '/services/'
+	},
+	{
 		title: 'Works',
 		path: '/works/'
 	},
@@ -48,10 +52,6 @@ export const menuLinks: MenuLink[] = [
 	{
 		title: 'Uses',
 		path: '/uses/'
-	},
-	{
-		title: 'Tools',
-		path: '/tools/'
 	}
 ]
 
@@ -159,7 +159,7 @@ export const jobs: Job[] = [
 		logo: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712314541/personal-website/background/netcompany_fulmjy.webp',
 		name: 'Netcompany',
 		jobTitle: 'Software Engineer',
-		startDate: '2023-12',
+		startDate: '2022-12',
 		endDate: '2023-11',
 		description: `Spearheaded front-end development using Vue.js and Typescript in the mit.dk project, elevating user experience for 2.5M+ users.`
 	},
@@ -183,8 +183,53 @@ export const jobs: Job[] = [
 	}
 ]
 
+export const technologies = [
+	{
+		category: 'Frontend',
+		skills: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Redux', 'GraphQL']
+	},
+	{
+		category: 'Backend',
+		skills: ['Node.js', 'Express', 'Python', 'Django', 'PostgreSQL', 'MongoDB']
+	},
+	{
+		category: 'DevOps',
+		skills: ['Docker', 'AWS', 'CI/CD', 'Git', 'Linux', 'Nginx']
+	},
+	{
+		category: 'Tools',
+		skills: ['VS Code', 'Postman', 'Figma', 'Jest', 'GitHub', 'Vercel']
+	}
+]
+
+export const services = [
+	{
+		iconPath: 'layout',
+		title: 'UI Development',
+		description:
+			'Custom web applications built with React and Next.js, focusing on performance and user experience.'
+	},
+	{
+		iconPath: 'server',
+		title: 'Backend Development',
+		description: 'Robust and scalable server-side solutions using Node.js, Express, and Fastify.'
+	},
+	{
+		iconPath: 'code',
+		title: 'API Development',
+		description:
+			'RESTful and GraphQL API design and implementation for seamless data flow between client and server.'
+	},
+	{
+		iconPath: 'monitor-smartphone',
+		title: 'Responsive Design',
+		description:
+			'Mobile-first, responsive web designs that work flawlessly across all devices and screen sizes.'
+	}
+]
+
 export const RESUME_PDF: string =
-	'https://projects-bucket-luanvothanh.s3.ap-southeast-1.amazonaws.com/Vo_Thanh_Luan_resume.pdf'
+	'https://drive.google.com/file/d/19sjrHr2TyEu8Y9DjgIONzGooJpsf-LIS/view?usp=sharing'
 
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {

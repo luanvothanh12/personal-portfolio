@@ -56,12 +56,61 @@ import { siteConfig, platforms } from '@/site-config'
 		</section>
 
 		<Section title='About'>
-			<p class='text-muted-foreground'>
-				Experienced software engineer with more than 2 years in software engineering, skilled in
-				problem-solving and system architecture.
+			<p>
+				Results-driven Software Engineer with 2 years of experience architecting scalable solutions
+				across enterprises. Proven track record of delivering innovative solutions in cloud
+				infrastructure, real-time monitoring systems, and enterprise applications.
 			</p>
+
+			<p class='font-bold'>Currently based in Wollongong, NSW, Australia.</p>
+			<button
+				id='work-button'
+				type='button'
+				class='mr-auto flex h-12 w-auto items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
+			>
+				My works
+				<svg
+					class='ml-2 size-4'
+					viewBox='0 0 24 24'
+					stroke-width='2'
+					stroke='currentColor'
+					fill='none'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+				>
+					<path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+					<path d='M5 12h14'></path>
+					<path d='M13 18l6 -6'></path>
+					<path d='M13 6l6 6'></path>
+				</svg>
+			</button>
 		</Section>
-		<Section title='Connections'>
+
+		<Section title='Bio'>
+			<ul class='space-y-2'>
+				<li>
+					<span class='mr-4 font-bold'>2001</span> Born in Vietnam.
+				</li>
+				<li>
+					<span class='mr-4 font-bold'>2021</span> Worked at Intel Corporation.
+				</li>
+				<li>
+					<span class='mr-4 font-bold'>2022</span> Worked at Netcompany.
+				</li>
+				<li>
+					<span class='mr-4 font-bold'>2023</span> Graduated with a Bachelor's in Information Technology
+					from RMIT University Vietnam (GPA 3.2/4.0).
+				</li>
+				<li>
+					<span class='mr-4 font-bold'>2024</span> Worked at Talknician.
+				</li>
+				<li>
+					<span class='mr-4 font-bold'>2025</span> Pursue a Master’s in Computer Science in Australia.
+				</li>
+			</ul>
+		</Section>
+
+		<Section title='On the web'>
 			<div class='flex justify-between'>
 				<div class='grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-2'>
 					{
@@ -82,11 +131,39 @@ import { siteConfig, platforms } from '@/site-config'
 			</div>
 		</Section>
 
-		<Section title='Newlester'>
-			<p class='text-muted-foreground'>
+		<Section title='Newsletter'>
+			<p>
 				Join me on a behind-the-scenes coding journey. Weekly updates on projects, tutorials, and
 				videos.
 			</p>
+
+			<button
+				type='button'
+				class='mr-auto flex h-12 w-auto items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
+			>
+				<svg
+					class='mr-2 size-4'
+					viewBox='0 0 24 24'
+					stroke-width='2'
+					stroke='currentColor'
+					fill='none'
+					stroke-linecap='round'
+					stroke-linejoin='round'
+				>
+					<path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+					<rect x='3' y='5' width='18' height='14' rx='2'></rect>
+					<path d='M3 7l9 6l9 -6'></path>
+				</svg>
+				Sign up for my newsletter here
+			</button>
 		</Section>
 	</div>
 </PageLayout>
+
+<script>
+	const workButton = document.getElementById('work-button')
+
+	workButton?.addEventListener('click', function () {
+		location.href = '/works'
+	})
+</script>

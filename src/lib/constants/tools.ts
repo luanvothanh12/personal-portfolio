@@ -1,8 +1,3 @@
----
-import Button from '@/components/Button.astro'
-import ToolSection from '@/components/ToolSection.astro'
-import PageLayout from '@/layouts/BaseLayout.astro'
-
 const PROGRAMMING_LANGUAGE = [
 	{
 		name: 'Typescript',
@@ -165,42 +160,16 @@ const DEVELOPMENT = [
 		iconBgColour: '#06A67F'
 	}
 ]
----
 
-<PageLayout meta={{ title: 'Tools' }}>
-	<div class='animate w-full'>
-		<Button title='Back' href='/'>
-			<svg width='14' height='14' viewBox='0 0 24 24' slot='icon-before'>
-				<path
-					fill='currentColor'
-					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
-				>
-				</path>
-			</svg>
-		</Button>
-
-		<div class='mt-5 flex w-full flex-col gap-y-10'>
-			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Skills</h1>
-				<p>Skills that I had</p>
-			</div>
-
-			<ToolSection title='Programming Language' tools={PROGRAMMING_LANGUAGE} />
-			<ToolSection title='Database' tools={DATABASE} />
-			<ToolSection title='DevOps' tools={DEVOPS} />
-			<ToolSection title='Cloud Computing' tools={CLOUD_COMPUTING} />
-			<ToolSection title='Machine Learning' tools={MACHINE_LEARNING} />
-
-			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
-				<p>Tools and software I use daily</p>
-			</div>
-
-			<ToolSection title='Design' tools={DESIGN} />
-			<ToolSection title='Editing' tools={EDITING} />
-			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
-			<ToolSection title='Testing' tools={TESTING} />
-			<ToolSection title='Development' tools={DEVELOPMENT} />
-		</div>
-	</div>
-</PageLayout>
+export {
+	PROGRAMMING_LANGUAGE,
+	DESIGN,
+	DATABASE,
+	DEVELOPMENT,
+	DEVOPS,
+	EDITING,
+	TESTING,
+	CLOUD_COMPUTING,
+	PRODUCTIVITY,
+	MACHINE_LEARNING
+}
