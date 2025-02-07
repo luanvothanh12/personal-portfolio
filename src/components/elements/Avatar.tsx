@@ -1,3 +1,3 @@
 export default function Avatar() {
-	return <div>Hi</div>
+  return <div>Hi</div>
 }

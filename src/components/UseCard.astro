@@ -3,22 +3,33 @@ import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-	equipment: CollectionEntry<'uses'>
+  equipment: CollectionEntry<'use'>
 }
 
-const { data, slug } = Astro.props.equipment
+const {
+  equipment: { id, data }
+} = Astro.props
+
+const { description, heroImage, publishDate, title, updatedDate, draft: isDraft } = data
 ---
 
 <li class='mb-4 text-center'>
-	<a href={`/use/${slug}`}>
-		<Image
-			class='h-auto w-full rounded-xl border border-slate-300 dark:border-zinc-700'
-			src={data.img}
-			width={720 * 2}
-			height={1280 * 2}
-			alt={data.img_alt}
-		/>
-		<div class='mt-3 text-xl font-bold'>{data.heading}</div>
-		{data.subheading && <div class='opacity-70'>{data.subheading}</div>}
-	</a>
+  <a href={`/use/${id}`}>
+    {
+      heroImage && (
+        <Image
+          class='h-auto w-full rounded-xl border border-slate-300 dark:border-zinc-700'
+          src={heroImage.src}
+          width={720 * 2}
+          height={1280 * 2}
+          alt={heroImage.alt}
+          fetchpriority='high'
+          loading='eager'
+        />
+      )
+    }
+
+    <div class='mt-3 text-xl font-bold'>{title}</div>
+    <div class='opacity-70'>{description}</div>
+  </a>
 </li>

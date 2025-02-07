@@ -1,34 +1,34 @@
 ---
+import type { SiteMeta } from '@/types'
 import SpeedInsights from '@vercel/speed-insights/astro'
 
 import BaseHead from '@/components/BaseHead.astro'
 import Footer from '@/components/layout/Footer.astro'
 import Header from '@/components/layout/Header.astro'
 import { siteConfig } from '@/site-config'
-import type { SiteMeta } from '@/types'
 
 interface Props {
-	meta: SiteMeta
+  meta: SiteMeta
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title }
+  meta: { articleDate, description = siteConfig.description, ogImage, title }
 } = Astro.props
 ---
 
-<html lang={siteConfig.lang} class=''>
-	<head>
-		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-	</head>
+<html lang={siteConfig.locale.lang} class=''>
+  <head>
+    <BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+  </head>
 
-	<body class='flex justify-center bg-background'>
-		<main
-			class='flex min-h-screen w-screen max-w-[60rem] flex-col items-center px-6 pb-10 pt-7 font-satoshi text-[0.92rem] leading-relaxed sm:px-10 lg:px-10'
-		>
-			<Header />
-			<slot />
-			<Footer />
-		</main>
-		<SpeedInsights />
-	</body>
+  <body class='bg-background flex justify-center'>
+    <main
+      class='font-satoshi flex min-h-screen w-full max-w-[60rem] flex-col items-center px-6 pt-7 pb-10 text-[0.92rem] leading-relaxed sm:px-10 lg:px-10'
+    >
+      <Header />
+      <slot />
+      <Footer />
+    </main>
+    <SpeedInsights />
+  </body>
 </html>

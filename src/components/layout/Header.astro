@@ -5,49 +5,49 @@ import { siteConfig } from '@/site-config'
 ---
 
 <header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
-	<nav
-		class='relative mx-auto flex w-full items-center justify-between gap-3 sm:flex sm:items-center'
-	>
-		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>{siteConfig.author}</a>
-		<div class='flex-1'></div>
+  <nav
+    class='relative mx-auto flex w-full items-center justify-between gap-3 sm:flex sm:items-center'
+  >
+    <a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>{siteConfig.author}</a>
+    <div class='flex-1'></div>
 
-		<button
-			id='downloadCV'
-			type='button'
-			class='flex h-12 items-center justify-between rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
-		>
-			Download my CV
-			<svg
-				class='ml-2 size-4'
-				viewBox='0 0 24 24'
-				stroke-width='2'
-				stroke='currentColor'
-				fill='none'
-				stroke-linecap='round'
-				stroke-linejoin='round'
-				><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
-					d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path><path d='M7 11l5 5l5 -5'
-				></path><path d='M12 4l0 12'></path></svg
-			>
-		</button>
+    <button
+      id='downloadCV'
+      type='button'
+      class='bg-primary hover:bg-primary/10 hover:text-primary dark:bg-primary-foreground dark:hover:bg-primary/10 flex h-12 items-center justify-between rounded-lg px-4 py-2 text-sm font-semibold text-white duration-200 focus:ring-2 focus:ring-offset-2'
+    >
+      Download my CV
+      <svg
+        class='ml-2 size-4'
+        viewBox='0 0 24 24'
+        stroke-width='2'
+        stroke='currentColor'
+        fill='none'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        ><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
+          d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path><path d='M7 11l5 5l5 -5'
+        ></path><path d='M12 4l0 12'></path></svg
+      >
+    </button>
 
-		<ThemeToggle client:load />
-		<MobileNav client:load />
-	</nav>
+    <ThemeToggle client:load />
+    <MobileNav client:load />
+  </nav>
 </header>
 
 <script>
-	import { RESUME_PDF } from '@/site-config'
+  import { RESUME_PDF } from '@/site-config'
 
-	function downloadPDF() {
-		const link = document.createElement('a')
-		link.href = RESUME_PDF
-		link.download = 'Vo_Thanh_Luan_resume.pdf'
-		document.body.appendChild(link)
-		link.click()
-		document.body.removeChild(link)
-	}
+  function downloadPDF() {
+    const link = document.createElement('a')
+    link.href = RESUME_PDF
+    link.download = 'Vo_Thanh_Luan_resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
-	const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement
-	downloadButton.addEventListener('click', downloadPDF)
+  const downloadButton = document.getElementById('downloadCV') as HTMLButtonElement
+  downloadButton.addEventListener('click', downloadPDF)
 </script>

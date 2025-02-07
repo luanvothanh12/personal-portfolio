@@ -1,169 +1,169 @@
 ---
 import { Image } from 'astro:assets'
 
-import about from '@/assets/about.png'
+import PageLayout from '@/layouts/BaseLayout.astro'
 import PlatformCard from '@/components/elements/PlatformCard'
 import Label from '@/components/Label.astro'
 import Section from '@/components/Section.astro'
-import PageLayout from '@/layouts/BaseLayout.astro'
-import { siteConfig, platforms } from '@/site-config'
+import about from '@/assets/about.png'
+import { platforms, siteConfig } from '@/site-config'
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
-	<div class='flex w-full flex-col gap-y-10'>
-		<section class='animate flex flex-col items-center gap-y-7'>
-			<Image
-				src={about}
-				alt='profile photo'
-				class='h-60 w-auto rounded-full bg-[#FFBE98] p-2'
-				loading='eager'
-			/>
+  <div class='flex w-full flex-col gap-y-10'>
+    <section class='animate flex flex-col items-center gap-y-7'>
+      <Image
+        src={about}
+        alt='profile photo'
+        class='h-60 w-auto rounded-full bg-[#FFBE98] p-2'
+        loading='eager'
+      />
 
-			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>{siteConfig.author}</h1>
-				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Software Engineer'>
-						<svg viewBox='0 0 24 24' class='size-5' slot='icon'
-							><path
-								fill='currentColor'
-								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
-							></path></svg
-						>
-					</Label>
-					<Label title='Wollongong, NSW, Australia'>
-						<svg viewBox='0 0 24 24' class='size-5' slot='icon'
-							><path
-								fill='currentColor'
-								d='M12.003 11.73q.668 0 1.14-.475q.472-.475.472-1.143t-.475-1.14q-.476-.472-1.143-.472t-1.14.476q-.472.475-.472 1.143t.475 1.14q.476.472 1.143.472M12 19.677q2.82-2.454 4.458-4.991q1.638-2.538 1.638-4.39q0-2.744-1.737-4.53T12 3.981q-2.621 0-4.359 1.785t-1.737 4.53q0 1.852 1.638 4.39q1.639 2.537 4.458 4.99m0 1.343q-3.525-3.117-5.31-5.814q-1.786-2.697-1.786-4.909q0-3.173 2.066-5.234Q9.037 3 12 3t5.03 2.062q2.066 2.061 2.066 5.234q0 2.212-1.785 4.909q-1.786 2.697-5.311 5.814m0-10.904'
-							></path></svg
-						>
-					</Label>
-					<Label
-						title='Connect on Linkedin'
-						as='a'
-						href='https://www.linkedin.com/in/luanvothanh/'
-						target='_blank'
-					>
-						<svg viewBox='0 0 16 16' slot='icon' class='size-5 text-foreground/75'
-							><path
-								fill='currentColor'
-								d='M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z'
-							></path></svg
-						>
-					</Label>
-				</div>
-			</div>
-		</section>
+      <div class='flex flex-col items-center gap-y-4'>
+        <h1 class='text-3xl font-bold'>{siteConfig.author}</h1>
+        <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
+          <Label title='Software Engineer'>
+            <svg viewBox='0 0 24 24' class='size-5' slot='icon'
+              ><path
+                fill='currentColor'
+                d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
+              ></path></svg
+            >
+          </Label>
+          <Label title='Wollongong, NSW, Australia'>
+            <svg viewBox='0 0 24 24' class='size-5' slot='icon'
+              ><path
+                fill='currentColor'
+                d='M12.003 11.73q.668 0 1.14-.475q.472-.475.472-1.143t-.475-1.14q-.476-.472-1.143-.472t-1.14.476q-.472.475-.472 1.143t.475 1.14q.476.472 1.143.472M12 19.677q2.82-2.454 4.458-4.991q1.638-2.538 1.638-4.39q0-2.744-1.737-4.53T12 3.981q-2.621 0-4.359 1.785t-1.737 4.53q0 1.852 1.638 4.39q1.639 2.537 4.458 4.99m0 1.343q-3.525-3.117-5.31-5.814q-1.786-2.697-1.786-4.909q0-3.173 2.066-5.234Q9.037 3 12 3t5.03 2.062q2.066 2.061 2.066 5.234q0 2.212-1.785 4.909q-1.786 2.697-5.311 5.814m0-10.904'
+              ></path></svg
+            >
+          </Label>
+          <Label
+            title='Connect on Linkedin'
+            as='a'
+            href='https://www.linkedin.com/in/luanvothanh/'
+            target='_blank'
+          >
+            <svg viewBox='0 0 16 16' slot='icon' class='text-foreground/75 size-5'
+              ><path
+                fill='currentColor'
+                d='M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z'
+              ></path></svg
+            >
+          </Label>
+        </div>
+      </div>
+    </section>
 
-		<Section title='About'>
-			<p>
-				Results-driven Software Engineer with 2 years of experience architecting scalable solutions
-				across enterprises. Proven track record of delivering innovative solutions in cloud
-				infrastructure, real-time monitoring systems, and enterprise applications.
-			</p>
+    <Section title='About'>
+      <p>
+        Results-driven Software Engineer with 2 years of experience architecting scalable solutions
+        across enterprises. Proven track record of delivering innovative solutions in cloud
+        infrastructure, real-time monitoring systems, and enterprise applications.
+      </p>
 
-			<p class='font-bold'>Currently based in Wollongong, NSW, Australia.</p>
-			<button
-				id='work-button'
-				type='button'
-				class='mr-auto flex h-12 w-auto items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
-			>
-				My works
-				<svg
-					class='ml-2 size-4'
-					viewBox='0 0 24 24'
-					stroke-width='2'
-					stroke='currentColor'
-					fill='none'
-					stroke-linecap='round'
-					stroke-linejoin='round'
-				>
-					<path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-					<path d='M5 12h14'></path>
-					<path d='M13 18l6 -6'></path>
-					<path d='M13 6l6 6'></path>
-				</svg>
-			</button>
-		</Section>
+      <p class='font-bold'>Currently based in Wollongong, NSW, Australia.</p>
+      <button
+        id='work-button'
+        type='button'
+        class='bg-primary hover:bg-primary/10 hover:text-primary dark:bg-primary-foreground dark:hover:bg-primary/10 mr-auto flex h-12 w-auto items-center rounded-lg px-4 py-2 text-sm font-semibold text-white duration-200 focus:ring-2 focus:ring-offset-2'
+      >
+        My works
+        <svg
+          class='ml-2 size-4'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          fill='none'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        >
+          <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+          <path d='M5 12h14'></path>
+          <path d='M13 18l6 -6'></path>
+          <path d='M13 6l6 6'></path>
+        </svg>
+      </button>
+    </Section>
 
-		<Section title='Bio'>
-			<ul class='space-y-2'>
-				<li>
-					<span class='mr-4 font-bold'>2001</span> Born in Vietnam.
-				</li>
-				<li>
-					<span class='mr-4 font-bold'>2021</span> Worked at Intel Corporation.
-				</li>
-				<li>
-					<span class='mr-4 font-bold'>2022</span> Worked at Netcompany.
-				</li>
-				<li>
-					<span class='mr-4 font-bold'>2023</span> Graduated with a Bachelor's in Information Technology
-					from RMIT University Vietnam (GPA 3.2/4.0).
-				</li>
-				<li>
-					<span class='mr-4 font-bold'>2024</span> Worked at Talknician.
-				</li>
-				<li>
-					<span class='mr-4 font-bold'>2025</span> Pursue a Master’s in Computer Science in Australia.
-				</li>
-			</ul>
-		</Section>
+    <Section title='Bio'>
+      <ul class='space-y-2'>
+        <li>
+          <span class='mr-4 font-bold'>2001</span> Born in Vietnam.
+        </li>
+        <li>
+          <span class='mr-4 font-bold'>2021</span> Worked at Intel Corporation.
+        </li>
+        <li>
+          <span class='mr-4 font-bold'>2022</span> Worked at Netcompany.
+        </li>
+        <li>
+          <span class='mr-4 font-bold'>2023</span> Graduated with a Bachelor's in Information Technology
+          from RMIT University Vietnam (GPA 3.2/4.0).
+        </li>
+        <li>
+          <span class='mr-4 font-bold'>2024</span> Worked at Talknician.
+        </li>
+        <li>
+          <span class='mr-4 font-bold'>2025</span> Pursue a Master’s in Computer Science in Australia.
+        </li>
+      </ul>
+    </Section>
 
-		<Section title='On the web'>
-			<div class='flex justify-between'>
-				<div class='grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-2'>
-					{
-						platforms && platforms.length > 0 ? (
-							platforms.map((platform) => (
-								<PlatformCard
-									client:only='react'
-									url={platform.url}
-									username={platform.username}
-									type={platform.type}
-								/>
-							))
-						) : (
-							<div>There is no platform found!</div>
-						)
-					}
-				</div>
-			</div>
-		</Section>
+    <Section title='On the web'>
+      <div class='flex justify-between'>
+        <div class='grid grid-cols-1 gap-x-3 sm:grid-cols-2 md:grid-cols-2'>
+          {
+            platforms && platforms.length > 0 ? (
+              platforms.map((platform) => (
+                <PlatformCard
+                  client:only='react'
+                  url={platform.url}
+                  username={platform.username}
+                  type={platform.type}
+                />
+              ))
+            ) : (
+              <div>There is no platform found!</div>
+            )
+          }
+        </div>
+      </div>
+    </Section>
 
-		<Section title='Newsletter'>
-			<p>
-				Join me on a behind-the-scenes coding journey. Weekly updates on projects, tutorials, and
-				videos.
-			</p>
+    <Section title='Newsletter'>
+      <p>
+        Join me on a behind-the-scenes coding journey. Weekly updates on projects, tutorials, and
+        videos.
+      </p>
 
-			<button
-				type='button'
-				class='mr-auto flex h-12 w-auto items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white duration-200 hover:bg-primary/10 hover:text-primary focus:ring-2 focus:ring-offset-2 dark:bg-primary-foreground dark:hover:bg-primary/10'
-			>
-				<svg
-					class='mr-2 size-4'
-					viewBox='0 0 24 24'
-					stroke-width='2'
-					stroke='currentColor'
-					fill='none'
-					stroke-linecap='round'
-					stroke-linejoin='round'
-				>
-					<path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-					<rect x='3' y='5' width='18' height='14' rx='2'></rect>
-					<path d='M3 7l9 6l9 -6'></path>
-				</svg>
-				Sign up for my newsletter here
-			</button>
-		</Section>
-	</div>
+      <button
+        type='button'
+        class='bg-primary hover:bg-primary/10 hover:text-primary dark:bg-primary-foreground dark:hover:bg-primary/10 mr-auto flex h-12 w-auto items-center rounded-lg px-4 py-2 text-sm font-semibold text-white duration-200 focus:ring-2 focus:ring-offset-2'
+      >
+        <svg
+          class='mr-2 size-4'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          fill='none'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        >
+          <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+          <rect x='3' y='5' width='18' height='14' rx='2'></rect>
+          <path d='M3 7l9 6l9 -6'></path>
+        </svg>
+        Sign up for my newsletter here
+      </button>
+    </Section>
+  </div>
 </PageLayout>
 
 <script>
-	const workButton = document.getElementById('work-button')
+  const workButton = document.getElementById('work-button')
 
-	workButton?.addEventListener('click', function () {
-		location.href = '/works'
-	})
+  workButton?.addEventListener('click', function () {
+    location.href = '/works'
+  })
 </script>

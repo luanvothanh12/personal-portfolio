@@ -1,0 +1,27 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+import { getWorkCollection, sortMDByDate } from '@/lib/utils/server'
+
+import WorkLayout from '@/layouts/WorkPost.astro'
+
+export const prerender = true
+
+export async function getStaticPaths() {
+  const works = sortMDByDate(await getWorkCollection())
+  return works.map((work: CollectionEntry<'work'>) => ({
+    params: { id: work.id },
+    props: { work }
+  }))
+}
+
+type Props = {
+  work: CollectionEntry<'work'>
+}
+
+const { work } = Astro.props
+const { Content, headings } = await render(work)
+---
+
+<WorkLayout work={work} headings={headings}>
+  <Content />
+</WorkLayout>

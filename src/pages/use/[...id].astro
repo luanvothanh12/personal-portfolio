@@ -1,0 +1,27 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+import { getUsesCollection, sortMDByDate } from '@/lib/utils/server'
+
+import EquipmentLayout from '@/layouts/EquipmentPost.astro'
+
+export const prerender = true
+
+export async function getStaticPaths() {
+  const uses = sortMDByDate(await getUsesCollection())
+  return uses.map((use: CollectionEntry<'use'>) => ({
+    params: { id: use.id },
+    props: { use }
+  }))
+}
+
+type Props = {
+  use: CollectionEntry<'use'>
+}
+
+const { use } = Astro.props
+const { Content } = await render(use)
+---
+
+<EquipmentLayout use={use}>
+  <Content />
+</EquipmentLayout>

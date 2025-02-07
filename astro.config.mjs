@@ -1,8 +1,8 @@
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
-import vercel from '@astrojs/vercel/serverless'
+import vercel from '@astrojs/vercel'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import expressiveCode from 'astro-expressive-code'
 import icon from 'astro-icon'
@@ -14,16 +14,8 @@ import { expressiveCodeOptions } from './src/site.config'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://luanvothanh.com',
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap(),
-		mdx(),
-		icon(),
-		react()
-	],
+	integrations: [expressiveCode(expressiveCodeOptions), sitemap(), mdx(), icon(), react()],
+	vite: { plugins: [tailwindcss()] },
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages],
 		rehypePlugins: [

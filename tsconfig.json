@@ -1,5 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
@@ -9,9 +10,10 @@
       "@/assets/*": ["src/assets/*"],
       "@/components/*": ["src/components/*"],
       "@/layouts/*": ["src/layouts/*"],
+      "@/plugins/*": ["src/plugins/*"],
       "@/utils": ["src/utils/index.ts"],
       "@/lib/*": ["src/lib/*"],
-      "@/types": ["src/types.ts"],
+      "@/types": ["src/types/index.ts"],
       "@/site-config": ["src/site.config.ts"]
     },
     "jsx": "react-jsx",

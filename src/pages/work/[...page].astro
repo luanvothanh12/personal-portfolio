@@ -1,0 +1,111 @@
+---
+import type { GetStaticPaths, Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { getWorkCollection, sortMDByDate } from '@/lib/utils/server'
+
+import PageLayout from '@/layouts/BaseLayout.astro'
+import Button from '@/components/Button.astro'
+import GitHubCalendar from '@/components/elements/GitHubCalendar'
+import GitHubProjectCard from '@/components/GitHubProjectCard.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import { openSourceProject } from '@/site-config'
+
+export const prerender = true
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const collections = sortMDByDate(await getWorkCollection())
+  const collectionsCount = collections.length
+  return paginate(collections, {
+    props: { collectionsCount }
+  })
+}) satisfies GetStaticPaths
+
+interface Props {
+  page: Page<CollectionEntry<'work'>>
+  uniqueTags: string[]
+  collectionsCount: number
+}
+
+const { page } = Astro.props
+
+const meta = {
+  description: 'My works',
+  title: 'Works'
+}
+
+const allProfessionalProjects = page.data.filter((item) => item.data.type === 'professional')
+const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
+---
+
+<PageLayout meta={meta}>
+  <div class='animate w-full'>
+    <Button title='Back' href='/' style='back' />
+
+    <div class='mt-5 flex w-full flex-col gap-y-10'>
+      <div>
+        <h1 class='mb-1 text-2xl font-bold'>Professional Projects</h1>
+        <p>Projects I have completed professionally</p>
+      </div>
+      <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
+        {
+          allProfessionalProjects.length === 0 ? (
+            <p>No projects yet.</p>
+          ) : (
+            allProfessionalProjects.map((project) => <ProjectCard project={project} />)
+          )
+        }
+      </div>
+
+      <div>
+        <h1 class='mb-1 text-2xl font-bold'>Personal Projects</h1>
+        <p>Personal projects I have worked on</p>
+      </div>
+      <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
+        {
+          allPetProjects.length === 0 ? (
+            <p>No pet projects yet.</p>
+          ) : (
+            allPetProjects.map((project) => <ProjectCard project={project} />)
+          )
+        }
+      </div>
+
+      <div>
+        <h1 class='mb-1 text-2xl font-bold'>Open-source</h1>
+        <p>Project I have contributed</p>
+      </div>
+      <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-2 md:gap-y-8'>
+        {
+          openSourceProject && openSourceProject.length > 0 ? (
+            openSourceProject.map((project) => (
+              <GitHubProjectCard
+                title={project.title}
+                description={project.description}
+                lang={project.lang}
+                stars={project.stars}
+                forks={project.forks}
+                visibility={project.visibility}
+                url={project.url}
+              />
+            ))
+          ) : (
+            <div>There is no open source project found!</div>
+          )
+        }
+      </div>
+
+      <div>
+        <h1 class='mb-1 text-2xl font-bold'>Github Activities</h1>
+      </div>
+
+      <div>
+        <GitHubCalendar client:only='react' username={'luanvothanh12'} />
+        <p>
+          If you think it would be useful or interesting to collaborate on a project, you can donate
+          to support my work or contact me to discuss a project.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>
+---
