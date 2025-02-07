@@ -18,10 +18,8 @@ const { description, heroImage, publishDate, title, updatedDate, draft: isDraft 
     {
       heroImage && (
         <Image
-          class='h-auto w-full rounded-xl border border-slate-300 dark:border-zinc-700'
+          class='aspect-3/2 h-auto w-full rounded-xl border border-slate-300 object-cover dark:border-zinc-700'
           src={heroImage.src}
-          width={720 * 2}
-          height={1280 * 2}
           alt={heroImage.alt}
           fetchpriority='high'
           loading='eager'

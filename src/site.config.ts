@@ -43,8 +43,8 @@ export const siteConfig: SiteConfig = {
   header: {
     menu: [
       {
-        title: 'Background',
-        link: '/background'
+        title: 'About',
+        link: '/about'
       },
       {
         title: 'Services',
@@ -66,13 +66,11 @@ export const siteConfig: SiteConfig = {
   },
 
   footer: {
-    // Registration information for ICP (optional)
-    registration: {
-      url: 'https://icp.gov.moe/?keyword=APTX4869',
-      text: 'Moe ICP APTX4869'
-    },
     credits: true,
-    social: { github: 'https://astro.build/chat' }
+    social: {
+      github: 'https://github.com/luanvothanh12/',
+      linkedin: 'https://linkedin.com/in/luanvothanh/'
+    }
   },
 
   content: {
@@ -269,32 +267,6 @@ export const technologies = [
   {
     category: 'Tools',
     skills: ['VS Code', 'Postman', 'Figma', 'Jest', 'GitHub', 'Vercel']
-  }
-]
-
-export const services = [
-  {
-    iconPath: 'layout',
-    title: 'UI Development',
-    description:
-      'Custom web applications built with React and Next.js, focusing on performance and user experience.'
-  },
-  {
-    iconPath: 'server',
-    title: 'Backend Development',
-    description: 'Robust and scalable server-side solutions using Node.js, Express, and Fastify.'
-  },
-  {
-    iconPath: 'code',
-    title: 'API Development',
-    description:
-      'RESTful and GraphQL API design and implementation for seamless data flow between client and server.'
-  },
-  {
-    iconPath: 'monitor-smartphone',
-    title: 'Responsive Design',
-    description:
-      'Mobile-first, responsive web designs that work flawlessly across all devices and screen sizes.'
   }
 ]
 

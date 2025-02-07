@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import type { CollectionKey, InferEntrySchema } from 'astro:content'
+
+interface Props {
+  data: InferEntrySchema<CollectionKey>
+}
+
+const {
+  data: { title, description, draft, heroImage }
+} = Astro.props
+---
+
+{
+  heroImage && (
+    <div class='hero-image relative mb-6'>
+      <Image
+        alt={heroImage.alt || title}
+        class='cover-image relative z-10 h-auto w-full rounded-2xl object-contain'
+        fetchpriority='high'
+        loading='eager'
+        src={heroImage.src}
+      />
+    </div>
+  )
+}
+
+{draft ? <span class='text-red-500'>(Draft)</span> : null}
+
+<h1 class='font-satoshi my-1 text-3xl'>{title}</h1>
+<p>{description}</p>

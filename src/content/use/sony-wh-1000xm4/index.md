@@ -4,11 +4,8 @@ description: 'Wireless noise-canceling headphones'
 publishDate: 2024-04-01
 tags:
   - Computing
-heroImage:
-  {
-    src: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712134528/personal-website/uses/wh-1000xm4-thumbnail_bnp9zp.webp',
-    alt: 'Sony WH-1000XM4'
-  }
+heroImage: { src: './thumbnail.webp', alt: 'Sony WH-1000XM4' }
+language: 'English'
 ---
 
 Sony WH-XM4 is my main headphones for coding, designing, video editing, and everything else. I absolutely love my Sony WH-XM4 headphones. The sound quality is simply outstanding, making every coding session an immersive experience. Whether I'm listening to music or tuning into a podcast, the audio is always crystal clear.

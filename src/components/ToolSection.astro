@@ -1,6 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
-
+import Svg from '@/components/Svg.astro'
 import { cn } from '@/utils'
 
 interface Props {
@@ -10,36 +9,38 @@ interface Props {
     name: string
     description: string
     href: string
-    iconPath: string
-    iconBgColour: string
+    icon: Promise<typeof import('*.svg?raw')>
   }[]
 }
+
 const { class: className, title, tools, ...props } = Astro.props
 ---
 
 <div
   class={cn(
-    className,
-    'flex flex-col rounded-xl border border-border py-5 px-3 gap-y-4 sm:gap-y-6'
+    'not-prose flex flex-col rounded-xl border border-border py-3 px-3 gap-y-3 sm:gap-y-4',
+    className
   )}
   {...props}
 >
-  <h2 class='px-2 text-lg font-medium'>{title}</h2>
-  <div class='grid grid-cols-1 gap-x-2 gap-y-3 sm:grid-cols-2 sm:gap-y-4'>
+  <div class='m-0 px-2 text-lg font-medium'>{title}</div>
+  <div class='grid grid-cols-1 gap-x-2 gap-y-2 sm:grid-cols-2'>
     {
       tools.map((tool) => (
         <a
-          class='group relative hover:bg-transparent'
+          class='group relative text-sm leading-normal no-underline'
           href={tool.href}
           id={tool.name}
           target='_blank'
         >
-          <div class='relative flex flex-row items-center gap-x-4 px-2 py-0.5 transition-all'>
-            <div class='border-border bg-muted absolute -inset-0 z-10 rounded-lg border opacity-0 transition-all group-hover:opacity-50' />
-            <Icon name={tool.iconPath} class='bg-muted z-20 size-10 rounded-lg p-2' />
+          <div class='hover:border-border hover:bg-muted flex items-center gap-x-3 rounded-lg border border-transparent px-1.5 py-1 transition-colors'>
+            <Svg
+              src={tool.icon}
+              class='bg-primary-foreground fill-foreground size-10 rounded-lg p-2'
+            />
             <div class='z-20 flex flex-col'>
-              <h3 class='font-medium'>{tool.name}</h3>
-              <p class='text-muted-foreground'>{tool.description}</p>
+              <div class='text-foreground font-medium'>{tool.name}</div>
+              <div class='font-normal'>{tool.description}</div>
             </div>
           </div>
         </a>

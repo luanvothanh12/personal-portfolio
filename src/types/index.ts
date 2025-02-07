@@ -46,14 +46,8 @@ interface MenuItem {
 }
 
 interface FooterConfig {
-  registration: RegistrationInfo
   credits: boolean
   social: SocialLinks
-}
-
-interface RegistrationInfo {
-  url: string
-  text: string
 }
 
 interface SocialLinks {

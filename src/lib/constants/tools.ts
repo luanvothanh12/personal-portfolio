@@ -3,22 +3,19 @@ const PROGRAMMING_LANGUAGE = [
     name: 'Typescript',
     description: 'Type-safe JavaScript',
     href: 'https://www.typescriptlang.org/',
-    iconPath: 'typescript',
-    iconBgColour: '#007ACC'
+    icon: import('@/assets/icons/typescript.svg?raw')
   },
   {
     name: 'Python',
     description: 'Data Science',
     href: 'https://www.python.org/',
-    iconPath: 'python',
-    iconBgColour: '#FFD344'
+    icon: import('@/assets/icons/python.svg?raw')
   },
   {
     name: 'Java',
     description: 'Object-oriented programming',
     href: 'https://www.java.com/',
-    iconPath: 'java',
-    iconBgColour: '#E76F00'
+    icon: import('@/assets/icons/java.svg?raw')
   }
 ]
 
@@ -27,8 +24,7 @@ const MACHINE_LEARNING = [
     name: 'PyTorch',
     description: 'Deep Learning',
     href: 'https://pytorch.org/',
-    iconPath: 'pytorch',
-    iconBgColour: '#EE4C2C'
+    icon: import('@/assets/icons/pytorch.svg?raw')
   }
 ]
 
@@ -37,22 +33,19 @@ const DATABASE = [
     name: 'MongoDB',
     description: 'NoSQL Database',
     href: 'https://www.mongodb.com/',
-    iconPath: 'mongodb',
-    iconBgColour: '#13AA52'
+    icon: import('@/assets/icons/mongodb.svg?raw')
   },
   {
     name: 'PostgreSQL',
     description: 'Relational Database',
     href: 'https://www.postgresql.org/',
-    iconPath: 'postgresql',
-    iconBgColour: '#336791'
+    icon: import('@/assets/icons/postgresql.svg?raw')
   },
   {
     name: 'Firebase',
     description: 'Realtime Database',
     href: 'https://firebase.google.com/',
-    iconPath: 'firebase',
-    iconBgColour: '#FFCA28'
+    icon: import('@/assets/icons/firebase.svg?raw')
   }
 ]
 
@@ -61,8 +54,7 @@ const CLOUD_COMPUTING = [
     name: 'AWS',
     description: 'Cloud Computing',
     href: 'https://aws.amazon.com/',
-    iconPath: 'aws',
-    iconBgColour: '#FF9900'
+    icon: import('@/assets/icons/aws.svg?raw')
   }
 ]
 
@@ -71,15 +63,13 @@ const DEVOPS = [
     name: 'Docker',
     description: 'Containerization',
     href: 'https://www.docker.com/',
-    iconPath: 'docker',
-    iconBgColour: '#2496ED'
+    icon: import('@/assets/icons/docker.svg?raw')
   },
   {
     name: 'Jenkins',
     description: 'CI/CD',
     href: 'https://www.jenkins.io/',
-    iconPath: 'jenkins',
-    iconBgColour: '#D24939'
+    icon: import('@/assets/icons/jenkins.svg?raw')
   }
 ]
 
@@ -88,8 +78,7 @@ const EDITING = [
     name: 'Premiere Pro',
     description: 'Video Editing',
     href: 'https://www.adobe.com/products/premiere',
-    iconPath: 'premiere',
-    iconBgColour: '#00005B'
+    icon: import('@/assets/icons/premiere.svg?raw')
   }
 ]
 
@@ -98,15 +87,13 @@ const DESIGN = [
     name: 'Figma',
     description: 'Design Tool',
     href: 'https://www.figma.com/',
-    iconPath: 'figma',
-    iconBgColour: '#FF6C37'
+    icon: import('@/assets/icons/figma.svg?raw')
   },
   {
     name: 'Eraser',
     description: 'Architecture Design',
     href: 'https://www.eraser.io/',
-    iconPath: 'eraser',
-    iconBgColour: '#2C2C32'
+    icon: import('@/assets/icons/eraser.svg?raw')
   }
 ]
 
@@ -115,15 +102,13 @@ const PRODUCTIVITY = [
     name: 'Arc',
     description: 'Browser',
     href: 'https://arc.net/',
-    iconPath: 'arc',
-    iconBgColour: '#414350'
+    icon: import('@/assets/icons/arc.svg?raw')
   },
   {
     name: 'Notion',
     description: 'Note Taking',
     href: 'https://www.notion.so/product',
-    iconPath: 'notion',
-    iconBgColour: '#EFEFEE'
+    icon: import('@/assets/icons/notion.svg?raw')
   }
 ]
 
@@ -132,8 +117,7 @@ const TESTING = [
     name: 'Postman',
     description: 'API Testing',
     href: 'https://www.postman.com/',
-    iconPath: 'postman',
-    iconBgColour: '#FF6C37'
+    icon: import('@/assets/icons/postman.svg?raw')
   }
 ]
 
@@ -142,22 +126,19 @@ const DEVELOPMENT = [
     name: 'Git',
     description: 'Version Control',
     href: 'https://git-scm.com/',
-    iconPath: 'git',
-    iconBgColour: '#F05032'
+    icon: import('@/assets/icons/git.svg?raw')
   },
   {
     name: 'VS Code',
     description: 'IDE',
     href: 'https://code.visualstudio.com/',
-    iconPath: 'vscode',
-    iconBgColour: '#2C2C32'
+    icon: import('@/assets/icons/vscode.svg?raw')
   },
   {
     name: 'ChatGPT',
     description: 'AI',
     href: 'https://chat.openai.com/',
-    iconPath: 'chatgpt',
-    iconBgColour: '#06A67F'
+    icon: import('@/assets/icons/chatgpt.svg?raw')
   }
 ]
 

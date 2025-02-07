@@ -4,11 +4,8 @@ description: 'Laptop computer'
 publishDate: 2024-04-01
 tags:
   - Computing
-heroImage:
-  {
-    src: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1712133203/personal-website/uses/macbook-pro-m1_bqi23p.webp',
-    alt: 'MacBook Pro M1 (16-inch, 2021)'
-  }
+heroImage: { src: './thumbnail.webp', alt: 'MacBook Pro M1 (16-inch, 2021)' }
+language: 'English'
 ---
 
 MacBook Pro M1 (16-inch, 2021) is my main computer for app devs, designing, video editing, and everything else.

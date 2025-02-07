@@ -1,11 +1,10 @@
 ---
-import type { MarkdownHeading } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
 import PageLayout from '@/layouts/BaseLayout.astro'
 import BackToTop from '@/components/BackToTop.astro'
 import Button from '@/components/Button.astro'
-import Hero from '@/components/Hero.astro'
+import EquipmentHero from '@/components/EquipmentHero.astro'
 import { cn } from '@/utils'
 import { integ } from '@/site-config'
 
@@ -34,7 +33,7 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--tw-tex
   <div class='mt-5 flex w-full flex-col'>
     <div class='mx-auto flex flex-col'>
       <div class='mb-8'>
-        <Hero data={data} />
+        <EquipmentHero data={data} />
       </div>
 
       <hr class='my-4 border-t border-zinc-400' />

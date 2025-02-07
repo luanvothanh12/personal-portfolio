@@ -4,11 +4,7 @@ description: 'Tablet computer'
 publishDate: 2024-04-01
 tags:
   - Computing
-heroImage:
-  {
-    src: 'https://res.cloudinary.com/dwshjkwds/image/upload/v1715360818/personal-website/uses/ipad-pro-m4_qg9xsz.webp',
-    alt: 'iPad Pro M4'
-  }
+heroImage: { src: './thumbnail.webp', alt: 'iPad Pro M4' }
 language: 'English'
 ---
 

@@ -1,17 +1,16 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { SERVICES } from '@/lib/constants/services'
 
-import { services } from '@/site-config'
-
-import Card from './Card.astro'
+import Card from '@/components/Card.astro'
+import Icon from '@/components/Icon.astro'
 ---
 
 <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
   {
-    services.map((service, index) => (
+    SERVICES.map((service, index) => (
       <Card key={index}>
         <div class='mb-4 flex items-center'>
-          <Icon name={service.iconPath} class='bg-muted z-20 size-10 rounded-lg p-2' />
+          <Icon name={service.icon as any} class='bg-muted z-20 size-10 rounded-lg p-2' />
           <h3 class='ml-4 text-2xl font-semibold'>{service.title}</h3>
         </div>
         <p class='text-primary'>{service.description}</p>

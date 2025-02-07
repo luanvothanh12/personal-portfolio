@@ -8,7 +8,7 @@ export const prerender = true
 
 export async function getStaticPaths() {
   const works = sortMDByDate(await getWorkCollection())
-  return works.map((work: CollectionEntry<'work'>) => ({
+  return works.map((work) => ({
     params: { id: work.id },
     props: { work }
   }))

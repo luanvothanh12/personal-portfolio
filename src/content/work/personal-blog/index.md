@@ -5,7 +5,7 @@ type: 'pet'
 tags:
   - Web Development
 publishDate: 2024-05-11
-heroImage: { src: './thumbnail.webp', alt: 'Blog Project Cover'}
+heroImage: { src: './thumbnail.webp', alt: 'Blog Project Cover' }
 githubLink: 'https://github.com/luanvothanh12/Blog-MDX'
 subImages:
   - img: https://res.cloudinary.com/dwshjkwds/image/upload/v1712132642/personal-website/projects/dica/dica-cover_xyqomi.webp
