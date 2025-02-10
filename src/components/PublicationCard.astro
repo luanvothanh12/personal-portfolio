@@ -20,7 +20,6 @@ const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
   <div class='flex grow flex-col'>
     <div class='flex justify-between'>
       <p class='mb-4 text-xl'>{paper.title}</p>
-      <div class='hidden text-xl md:block md:text-3xl'>{paper.publishedYear}</div>
     </div>
     <p class='mb-4 italic'>
       <a href={publishedIn.sourceUrl} class='hover:underline'>

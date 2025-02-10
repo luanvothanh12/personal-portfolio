@@ -1,3 +1,5 @@
+import type { Icons } from '@/lib/icons.ts'
+
 export interface SiteConfig {
   author: string
   title: string
@@ -129,6 +131,13 @@ export type Publication = {
   publishedIn: PublishedIn
   paper: Paper
   keywords: string[]
+}
+
+export type IconType = keyof typeof Icons
+
+export type TimelineEvent = {
+  date: string
+  content: string
 }
 
 export type Job = {

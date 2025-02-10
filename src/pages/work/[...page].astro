@@ -41,11 +41,10 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
   <div class='animate w-full'>
     <Button title='Back' href='/' style='back' />
 
-    <div class='mt-5 flex w-full flex-col gap-y-10'>
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Professional Projects</h1>
-        <p>Projects I have completed professionally</p>
-      </div>
+    <div class='mt-5 flex w-full flex-col gap-y-5'>
+      <h2 class='mb-1 text-2xl font-bold'>Professional Projects</h2>
+      <p class='mb-5'>Projects I have completed professionally</p>
+
       <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
         {
           allProfessionalProjects.length === 0 ? (
@@ -56,10 +55,9 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
         }
       </div>
 
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Personal Projects</h1>
-        <p>Personal projects I have worked on</p>
-      </div>
+      <h2 class='mb-1 text-2xl font-bold'>Personal Projects</h2>
+      <p class='mb-5'>Personal projects I have worked on</p>
+
       <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8'>
         {
           allPetProjects.length === 0 ? (
@@ -70,10 +68,9 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
         }
       </div>
 
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Open-source</h1>
-        <p>Project I have contributed</p>
-      </div>
+      <h2 class='mb-1 text-2xl font-bold'>Open-source</h2>
+      <p class='mb-5'>Project I have contributed</p>
+
       <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-2 md:gap-y-8'>
         {
           openSourceProject && openSourceProject.length > 0 ? (
@@ -94,13 +91,11 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
         }
       </div>
 
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Github Activities</h1>
-      </div>
+      <h2 class='mb-1 text-2xl font-bold'>Github Activities</h2>
 
       <div>
         <GitHubCalendar client:only='react' username='luanvothanh12' />
-        <p>
+        <p class='mt-5'>
           If you think it would be useful or interesting to collaborate on a project, you can donate
           to support my work or contact me to discuss a project.
         </p>
@@ -108,4 +103,3 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
     </div>
   </div>
 </PageLayout>
----

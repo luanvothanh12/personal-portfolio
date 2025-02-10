@@ -43,10 +43,6 @@ export const siteConfig: SiteConfig = {
   header: {
     menu: [
       {
-        title: 'About',
-        link: '/about'
-      },
-      {
         title: 'Services',
         link: '/services'
       },
@@ -57,6 +53,10 @@ export const siteConfig: SiteConfig = {
       {
         title: 'Blog',
         link: 'https://blog.luanvothanh.com/'
+      },
+      {
+        title: 'About',
+        link: '/about'
       },
       {
         title: 'Use',
