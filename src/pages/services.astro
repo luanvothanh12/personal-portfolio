@@ -2,6 +2,7 @@
 import PageLayout from '@/layouts/BaseLayout.astro'
 import Button from '@/components/Button.astro'
 import ProcessSection from '@/components/ProcessSection.astro'
+import ServiceFAQ from '@/components/ServiceFAQ.astro'
 import ServicesSection from '@/components/ServicesSection.astro'
 import TechStack from '@/components/TechStack.astro'
 
@@ -15,21 +16,32 @@ const meta = {
   <div class='animate w-full'>
     <Button title='Back' href='/' style='back' />
 
-    <div class='mt-5 flex w-full flex-col gap-y-10'>
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Services</h1>
-      </div>
+    <div class='mt-5 flex w-full flex-col gap-y-5'>
+      <h1 class='mb-1 text-2xl font-bold'>Services</h1>
+      <p>
+        I turn caffeine into code and ideas into functional websites. Whether you need a sleek
+        portfolio, a high-performance web app, or just someone to tell you why your site is breaking
+        in Internet Explorer (spoiler: everything breaks in IE), I’ve got you covered.
+      </p>
       <ServicesSection />
 
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Process</h1>
-      </div>
+      <h1 class='mb-1 text-2xl font-bold'>Process</h1>
+      <p>Looking forward to start your project? Here how</p>
       <ProcessSection />
 
-      <div>
-        <h1 class='mb-1 text-2xl font-bold'>Tech stack</h1>
-      </div>
+      <h1 class='mb-1 text-2xl font-bold'>Tech stack</h1>
       <TechStack />
+
+      <ServiceFAQ />
+
+      <div class='mx-auto flex items-center'>
+        <Button
+          title='View my works'
+          href='/work'
+          style='ahead'
+          class='bg-primary hover:bg-primary/10 hover:text-primary w-fit text-sm font-semibold text-white'
+        />
+      </div>
     </div>
   </div>
 </PageLayout>

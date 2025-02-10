@@ -10,9 +10,9 @@ import {
 } from './types'
 
 export const siteConfig: SiteConfig = {
-  author: 'Vo Thanh Luan',
+  author: 'Luan Vo Thanh',
   title: 'Personal Website',
-  description: 'Personal website of Vo Thanh Luan',
+  description: 'Personal website of Luan Vo Thanh',
   favicon: '/favicon/favicon.ico',
   locale: {
     lang: 'en-US',

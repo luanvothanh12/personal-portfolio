@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 
 import PageLayout from '@/layouts/BaseLayout.astro'
+import Button from '@/components/Button.astro'
 import PlatformCard from '@/components/elements/PlatformCard'
 import Label from '@/components/Label.astro'
 import Section from '@/components/Section.astro'
@@ -63,27 +64,17 @@ import { platforms, siteConfig } from '@/site-config'
       </p>
 
       <p class='font-bold'>Currently based in Wollongong, NSW, Australia.</p>
-      <button
-        id='work-button'
-        type='button'
-        class='bg-primary hover:bg-primary/10 hover:text-primary dark:bg-primary-foreground dark:hover:bg-primary/10 mr-auto flex h-12 w-auto items-center rounded-lg px-4 py-2 text-sm font-semibold text-white duration-200 focus:ring-2 focus:ring-offset-2'
-      >
-        My works
-        <svg
-          class='ml-2 size-4'
-          viewBox='0 0 24 24'
-          stroke-width='2'
-          stroke='currentColor'
-          fill='none'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        >
-          <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-          <path d='M5 12h14'></path>
-          <path d='M13 18l6 -6'></path>
-          <path d='M13 6l6 6'></path>
-        </svg>
-      </button>
+      <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
+    </Section>
+
+    <Section title='Work'>
+      <p>
+        Luan is a freelance and a full-stack developer based in Australia with a passion for
+        building digital services/stuff he wants. He has a knack for all things launching products,
+        from planning and designing all the way to solving real-life problems with code.
+      </p>
+
+      <Button title='My portfolio' class='w-fit self-end' href='/work' style='ahead' />
     </Section>
 
     <Section title='Bio'>
@@ -138,6 +129,7 @@ import { platforms, siteConfig } from '@/site-config'
       </p>
 
       <button
+        id='newsletter-button'
         type='button'
         class='bg-primary hover:bg-primary/10 hover:text-primary dark:bg-primary-foreground dark:hover:bg-primary/10 mr-auto flex h-12 w-auto items-center rounded-lg px-4 py-2 text-sm font-semibold text-white duration-200 focus:ring-2 focus:ring-offset-2'
       >
@@ -161,9 +153,9 @@ import { platforms, siteConfig } from '@/site-config'
 </PageLayout>
 
 <script>
-  const workButton = document.getElementById('work-button')
+  const newsletterButton = document.getElementById('newsletter-button')
 
-  workButton?.addEventListener('click', function () {
-    location.href = '/works'
+  newsletterButton?.addEventListener('click', function () {
+    location.href = 'https://blog.luanvothanh.com/'
   })
 </script>
