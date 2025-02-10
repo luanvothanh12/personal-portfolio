@@ -1,0 +1,15 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+import ProjectForm from '@/components/ProjectForm.astro'
+
+const meta = {
+  description: 'My services',
+  title: 'Services'
+}
+---
+
+<PageLayout meta={meta}>
+  <div class='animate w-full'>
+    <ProjectForm />
+  </div>
+</PageLayout>

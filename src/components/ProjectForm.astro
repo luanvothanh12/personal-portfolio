@@ -1,0 +1,155 @@
+---
+
+---
+
+<div>
+  <h1 class='mb-12 text-4xl leading-tight font-medium md:text-5xl'>
+    Are you ready to explore<br />
+    new possibilities for growth?
+  </h1>
+
+  <section class='mb-12'>
+    <h2 class='mb-6 text-2xl font-medium'>Information of your project</h2>
+    <div class='flex flex-wrap gap-3'>
+      {
+        ['Website', 'Dashboard', 'Maintenance', 'Responsive Web Design', 'Other'].map((item) => (
+          <button class='rounded-full border px-6 py-2 transition-colors'>{item}</button>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class='mb-12'>
+    <h2 class='mb-6 text-2xl font-medium'>Let us know about your project</h2>
+    <form class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+      <div class='space-y-2'>
+        <label class='block'>Hello, I am</label>
+        <input
+          type='text'
+          placeholder='Your Name'
+          class='w-full rounded-full border border-gray-200 px-4 py-3 focus:border-gray-400 focus:outline-none'
+        />
+      </div>
+
+      <div class='space-y-2'>
+        <label class='block'>Email</label>
+        <input
+          type='email'
+          placeholder='Example@mail.com'
+          class='w-full rounded-full border border-gray-200 px-4 py-3 focus:border-gray-400 focus:outline-none'
+        />
+      </div>
+
+      <div class='space-y-2 md:col-span-2'>
+        <label class='block'>How did you hear about us?</label>
+        <select
+          class='w-full appearance-none rounded-full border border-gray-200 bg-white px-4 py-3 focus:border-gray-400 focus:outline-none dark:text-gray-500'
+        >
+          <option value=''>Select one...</option>
+          <option value='search'>Search Engine</option>
+          <option value='social'>Social Media</option>
+          <option value='referral'>Referral</option>
+          <option value='other'>Other</option>
+        </select>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h2 class='mb-6 text-2xl font-medium'>Information of your project</h2>
+    <div class='space-y-6'>
+      <div class='space-y-2'>
+        <label class='block'>What is your goals for the project?</label>
+        <textarea
+          class='min-h-[120px] w-full rounded-2xl border border-gray-200 px-4 py-3 focus:border-gray-400 focus:outline-none'
+        ></textarea>
+      </div>
+
+      <div class='space-y-2'>
+        <div class='space-y-4'>
+          <div id='selected-files' class='flex flex-wrap gap-2'></div>
+          <label
+            class='inline-flex cursor-pointer items-center gap-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 dark:text-gray-500'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              class='h-5 w-5'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                d='M12 4v16m8-8H4'></path>
+            </svg>
+            Document
+            <input
+              type='file'
+              id='file-input'
+              multiple
+              class='hidden'
+              accept='.pdf,.doc,.docx,.txt'
+            />
+          </label>
+          <p class='text-sm text-gray-500'>*The more detailed the better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class='mt-8 flex justify-end gap-4'>
+    <button class='rounded-full border border-gray-200 px-6 py-2 hover:border-gray-400'>
+      Set Meeting
+    </button>
+    <button class='rounded-full bg-blue-600 px-6 py-2 text-white hover:bg-blue-700'>
+      Send Inquiry
+    </button>
+  </div>
+</div>
+
+<script>
+  const fileInput = document.getElementById('file-input') as HTMLInputElement
+  const selectedFilesContainer = document.getElementById('selected-files') as HTMLDivElement
+  const selectedFiles = new Set<File>()
+
+  fileInput?.addEventListener('change', () => {
+    if (fileInput.files) {
+      Array.from(fileInput.files).forEach((file) => {
+        if (!Array.from(selectedFiles).some((f) => f.name === file.name)) {
+          selectedFiles.add(file)
+        }
+      })
+      updateSelectedFiles()
+    }
+  })
+
+  function updateSelectedFiles() {
+    selectedFilesContainer.innerHTML = ''
+
+    selectedFiles.forEach((file) => {
+      const fileElement = document.createElement('div')
+      fileElement.className =
+        'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:text-gray-500'
+
+      const truncatedName = file.name.length > 12 ? file.name.slice(0, 10) + '...' : file.name
+
+      fileElement.innerHTML = `
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+        </svg>
+        ${truncatedName}
+        <button class="ml-1 hover:text-gray-700" data-filename="${file.name}">×</button>
+      `
+
+      const removeButton = fileElement.querySelector('button')
+      removeButton?.addEventListener('click', () => {
+        selectedFiles.delete(file)
+        updateSelectedFiles()
+      })
+
+      selectedFilesContainer.appendChild(fileElement)
+    })
+  }
+</script>
