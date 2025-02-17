@@ -95,7 +95,7 @@ export type PlatForm = {
 
 export type Author = {
   name: string
-  url: string
+  url?: string
 }
 
 export enum PublishedInType {
@@ -118,6 +118,8 @@ export type Paper = {
   title: string
   image: string
   publishedYear: string
+  doi: string
+  publicationUrl: string
 }
 
 export type FileFormat = {

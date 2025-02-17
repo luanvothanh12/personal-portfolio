@@ -90,7 +90,6 @@ export const integ: any = {
       { date: '2024-07-01', content: 'vidit suscipit at mei.' },
       { date: '2024-07-01', content: 'Quem denique mea id.' }
     ],
-    // Yourself link info
     applyTip: {
       name: siteConfig.title,
       desc: siteConfig.description || 'Null',
@@ -185,15 +184,26 @@ export const platforms: PlatForm[] = [
 export const publications: Publication[] = [
   {
     paper: {
-      title: 'The Importance of Polynomials in Mathematics',
-      image: 'https://via.placeholder.com/150',
-      publishedYear: '2024'
+      title:
+        'Fine-tuning Large Language Models for Improved Health Communication in Low-Resource Languages',
+      image: 'fine-tuning-large-model.png',
+      publishedYear: '2024',
+      doi: '10.1016/j.cmpb.2025.108655',
+      publicationUrl: 'https://doi.org/10.1016/j.cmpb.2025.108655'
     },
-    authors: [{ name: 'John Doe', url: 'https://example.com/authors/john_doe' }],
+    authors: [
+      { name: 'Luan Vo', url: 'https://example.com/authors/john_doe' },
+      { name: 'Nhat Bui' },
+      { name: 'Giang Nguyen' },
+      { name: 'Nguyen Nguyen' },
+      { name: 'Bao Vo' },
+      { name: 'Arthur Tang' }
+    ],
     publishedIn: {
       type: PublishedInType.Journal,
-      sourceTitle: 'Journal of Mathematics',
-      sourceUrl: 'https://example.com/journal'
+      sourceTitle: 'Computer Methods and Programs in Biomedicine',
+      sourceUrl:
+        'https://www.sciencedirect.com/journal/computer-methods-and-programs-in-biomedicine'
     },
     fileFormat: [
       {
@@ -209,7 +219,14 @@ export const publications: Publication[] = [
         url: 'https://example.com/pdf'
       }
     ],
-    keywords: ['polynomials', 'mathematics', 'research']
+    keywords: [
+      'Artificial Intelligence',
+      'Large Language Model',
+      'Low-Resources Languages',
+      'Health Communication and Promotion',
+      'Data Privacy and Security',
+      'Health Equity'
+    ]
   }
 ]
 

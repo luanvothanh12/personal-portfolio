@@ -73,7 +73,7 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
 
       <div class='grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-2 md:grid-cols-2 md:gap-y-8'>
         {
-          openSourceProject && openSourceProject.length > 0 ? (
+          openSourceProject.length > 0 ? (
             openSourceProject.map((project) => (
               <GitHubProjectCard
                 title={project.title}
@@ -93,13 +93,11 @@ const allPetProjects = page.data.filter((item) => item.data.type === 'pet')
 
       <h2 class='mb-1 text-2xl font-bold'>Github Activities</h2>
 
-      <div>
-        <GitHubCalendar client:only='react' username='luanvothanh12' />
-        <p class='mt-5'>
-          If you think it would be useful or interesting to collaborate on a project, you can donate
-          to support my work or contact me to discuss a project.
-        </p>
-      </div>
+      <GitHubCalendar client:only='react' username='luanvothanh12' />
+      <p class='mt-5'>
+        If you think it would be useful or interesting to collaborate on a project, you can donate
+        to support my work or contact me to discuss a project.
+      </p>
     </div>
   </div>
 </PageLayout>

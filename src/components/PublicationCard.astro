@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import imageMap from '@/lib/utils/image-mapping'
 import type { Author, FileFormat } from '@/types'
 
 import Button from '@/components/Button.astro'
@@ -7,11 +8,11 @@ import Button from '@/components/Button.astro'
 const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
 ---
 
-<div class='flex flex-col md:flex-row'>
+<div class='not-prose flex flex-col md:flex-row'>
   <Image
     width={720 * 2}
     height={1280 * 2}
-    src={paper.image}
+    src={imageMap[paper.image]}
     alt={paper.title}
     class='mr-8 mb-8 w-full rounded-lg md:size-60'
     loading='eager'
@@ -21,11 +22,13 @@ const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
     <div class='flex justify-between'>
       <p class='mb-4 text-xl'>{paper.title}</p>
     </div>
+
     <p class='mb-4 italic'>
-      <a href={publishedIn.sourceUrl} class='hover:underline'>
+      <a href={publishedIn.sourceUrl} class='hover:underline-offset-1'>
         {publishedIn.sourceTitle}
-      </a>&nbsp;
+      </a>
     </p>
+
     <p class='mb-4'>
       <span>Authors: </span>
       {
@@ -33,14 +36,14 @@ const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
           <span>
             {index === 0 ? (
               <strong>
-                <a href={author.url} class='hover:underline'>
+                <a href={author.url} class='hover:underline-offset-1'>
                   {author.name}
                 </a>
               </strong>
             ) : (
               <>
                 {', '}
-                <a href={author.url} class='hover:underline'>
+                <a href={author.url} class='hover:underline-offset-1'>
                   {author.name}
                 </a>
               </>
@@ -49,6 +52,7 @@ const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
         ))
       }
     </p>
+
     <p class='mb-4'>
       <span>Keywords: </span>
       {
@@ -57,15 +61,18 @@ const { paper, authors, publishedIn, fileFormat, keywords } = Astro.props
         }, '')
       }
     </p>
+
+    <p class='mb-4'>
+      <span>DOI: </span>
+      <a href={paper.publicationUrl} class='text-blue-500 hover:underline-offset-1' target='_blank'>
+        {paper.doi}
+      </a>
+    </p>
+
     <div class='my-2 flex items-center space-x-4'>
       {
         fileFormat.map((file: FileFormat, index: number) => (
-          <Button
-            href={`${file.url}`}
-            title={file.type}
-            key={index}
-            class='bg-primary rounded-lg text-blue-500 hover:text-blue-800 dark:hover:text-blue-800'
-          />
+          <Button href={file.url} title={file.type} key={index} />
         ))
       }
     </div>
