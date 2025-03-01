@@ -93,8 +93,8 @@ export const integ: any = {
     applyTip: {
       name: siteConfig.title,
       desc: siteConfig.description || 'Null',
-      url: 'https://astro-pure.js.org',
-      avatar: 'https://astro-pure.js.org/favicon/favicon.ico'
+      url: 'https://luanvothanh.com',
+      avatar: 'https://luanvothanh.com/favicon/favicon.ico'
     }
   },
   // Enable page search function

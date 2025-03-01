@@ -35,7 +35,7 @@ const meta = {
     <Button title='Back' href='/' style='back' />
 
     <div class='mt-5 flex w-full flex-col gap-y-5'>
-      <p>Software Engineer</p>
+      <p>Software Engineer / AI Researcher</p>
       <p>
         I write code and occasionally make things look pretty. When I’m not busy squashing bugs (the
         digital kind, not the creepy crawly ones), I’m probably staring at my screen wondering why
@@ -43,7 +43,7 @@ const meta = {
         resembles art. If it breaks, I probably know how to fix it… or at least Google does.
       </p>
 
-      <h2>Work Experiences</h2>
+      <h1 class='mb-1 text-2xl font-bold'>Work Experiences</h1>
       <p>Professional Background</p>
 
       <div class='grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2'>
@@ -84,7 +84,7 @@ const meta = {
         }
       </div>
 
-      <h2>Publications</h2>
+      <h1 class='mb-1 text-2xl font-bold'>Publications</h1>
       <p>Paper I have contributed</p>
 
       <div class='grid grid-cols-1 gap-4'>
@@ -106,7 +106,7 @@ const meta = {
         }
       </div>
 
-      <h2>Skills</h2>
+      <h1 class='mb-1 text-2xl font-bold'>Skills</h1>
       <p>Skills that I had</p>
 
       <ToolSection class='mb-5' title='Programming Language' tools={PROGRAMMING_LANGUAGE} />
@@ -115,7 +115,7 @@ const meta = {
       <ToolSection class='mb-5' title='Cloud Computing' tools={CLOUD_COMPUTING} />
       <ToolSection class='mb-5' title='Machine Learning' tools={MACHINE_LEARNING} />
 
-      <h2>Tools</h2>
+      <h1 class='mb-1 text-2xl font-bold'>Tools</h1>
       <p>Tools and software I use daily</p>
 
       <ToolSection class='mb-5' title='Design' tools={DESIGN} />
@@ -124,7 +124,7 @@ const meta = {
       <ToolSection class='mb-5' title='Testing' tools={TESTING} />
       <ToolSection class='mb-5' title='Development' tools={DEVELOPMENT} />
 
-      <h2>Social Networks</h2>
+      <h1 class='mb-1 text-2xl font-bold'>Social Networks</h1>
       <p>
         Connect with me across various platforms where I share insights, projects, and updates on my
         latest work. Whether it's professional contributions, open-source projects, or personal
@@ -132,7 +132,7 @@ const meta = {
       </p>
       <Substats stats={SOCIAL_PLATFORMS} />
 
-      <h2>About Website</h2>
+      <h1 class='mb-1 text-2xl font-bold'>About Website</h1>
       <p>Website history:</p>
       <Timeline events={WEB_TIMELINE} />
     </div>
