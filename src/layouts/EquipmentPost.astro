@@ -16,7 +16,7 @@ const {
   use: { data }
 } = Astro.props
 
-const { description, heroImage, publishDate, title, updatedDate, draft: isDraft } = data
+const { description, heroImage, publishDate, title, updatedDate } = data
 
 const socialImage = heroImage
   ? typeof heroImage.src === 'string'
@@ -24,7 +24,6 @@ const socialImage = heroImage
     : heroImage.src.src
   : 'social-card.png'
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString()
-const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--tw-text-opacity))'
 ---
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>

@@ -7,6 +7,8 @@ import expressiveCode from 'astro-expressive-code'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 import addClasses from 'rehype-add-classes'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 import remarkUnwrapImages from 'remark-unwrap-images'
 
 import { expressiveCodeOptions } from './src/site.config'
@@ -22,8 +24,9 @@ export default defineConfig({
     }
   },
   markdown: {
-    remarkPlugins: [remarkUnwrapImages],
+    remarkPlugins: [remarkUnwrapImages, remarkMath],
     rehypePlugins: [
+      [rehypeKatex, {}],
       [
         addClasses,
         {
